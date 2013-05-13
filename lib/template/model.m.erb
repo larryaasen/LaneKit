@@ -1,0 +1,40 @@
+//
+//  <%=@file_name%>.m
+//
+//  This model was created on <%=@model_date%> by LaneKit.
+//
+//
+
+#import "<%=@file_name%>.h"
+#import "MobileCoreServices/MobileCoreServices.h"
+#import "SystemConfiguration/SystemConfiguration.h"
+#import "RestKit.h"
+<% @attributes.each do |attribute| %><% if attribute[:relationship] %>#import "<%=attribute[:relationship]%>.h"<%end%><%end%>
+
+@implementation <%=@class_name%>
+
++ (void)initialize
+{
+  if (self == [<%=@class_name%> class])
+  {
+  }
+}
+
+// Returns the RKObjectMapping for this class
++ (RKObjectMapping *)modelMapping
+{
+  RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[<%=@class_name%> class]];
+  [mapping addAttributeMappingsFromDictionary:@{
+<% @attributes.each_with_index do |attribute, index| %>
+<% if !attribute[:relationship] %>
+    @"<%=attribute[:name]%>": @"<%=attribute[:name]%>"<% if index != @attributes.size-1 %>,<% end %>
+<% end %><% end %>  }];
+<% @attributes.each_with_index do |attribute, index| %>
+<% if attribute[:relationship] %>
+  [mapping addRelationshipMappingWithSourceKeyPath:@"<%=attribute[:name]%>" mapping:[<%=attribute[:relationship]%> modelMapping]];
+<% end %><% end %>
+  
+  return mapping;
+}
+
+@end

@@ -1,0 +1,19 @@
+//
+//  <%=@file_name%>.h
+//
+//  This model was created on <%=@model_date%> by LaneKit.
+//
+//
+
+#import <Foundation/Foundation.h><% if @using_core_data %>
+#import <CoreData/CoreData.h><% end %>
+
+@class RKObjectMapping;
+
+@interface <%=@class_name%> : NSObject
+
+<% @attributes.each do |attribute| %>@property (nonatomic,strong) <%=attribute[:objective_c_type]%><%=attribute[:name]%>;<% if attribute[:relationship] %>  // relates to: <%=attribute[:relationship]%><% end %><% end %>
+
++ (RKObjectMapping *)modelMapping;
+
+@end
