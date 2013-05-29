@@ -11,7 +11,7 @@ LaneKit is a Ruby command line app that creates iOS Objective-C models for integ
 
 ```
 $ gem install lanekit
-Successfully installed lanekit-0.1.3
+Successfully installed lanekit-x.x.x
 ```
 
 2. LaneKit is ready to use
