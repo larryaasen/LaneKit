@@ -74,6 +74,11 @@ module LaneKit
           }
           @any_relationships = relationship ? true : @any_relationships
         }
+        
+        script_name = File.basename($0)
+        script_args = ARGV.join(' ')
+        
+        @command = "#{script_name} #{script_args}"
 
         self.initialize_stuff
         self.create_model_folders

@@ -3,6 +3,8 @@
 //
 //  This model was created on <%=@model_date%> by LaneKit.
 //
+// The following LaneKit command was used to generate this model:
+// <%=@command%>
 //
 
 #import <Foundation/Foundation.h><% if @using_core_data %>
@@ -11,8 +13,8 @@
 @class RKObjectMapping;
 
 @interface <%=@class_name%> : NSObject
-
-<% @attributes.each do |attribute| %>@property (nonatomic,strong) <%=attribute[:objective_c_type]%><%=attribute[:name]%>;<% if attribute[:relationship] %>  // relates to: <%=attribute[:relationship]%><% end %><% end %>
+<% @attributes.each do |attribute| %>
+@property (nonatomic,strong) <%=attribute[:objective_c_type]%><%=attribute[:name]%>;<% if attribute[:relationship] %>  // relates to: <%=attribute[:relationship]%><% end %><% end %>
 
 + (RKObjectMapping *)modelMapping;
 
