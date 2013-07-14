@@ -110,11 +110,6 @@ LaneKit was created by [Larry Aasen](https://github.com/larryaasen).
 
 Follow Larry Aasen on Twitter [@LarryAasen](https://twitter.com/LarryAasen).
 
-### Creators
-
-[Larry Aasen](https://github.com/larryaasen)  
-[@larryaasen](https://twitter.com/larryaasen)
-
 ## License
 
 LaneKit is available under the MIT license. See the LICENSE file for more info.
