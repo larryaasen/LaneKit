@@ -1,3 +1,4 @@
+require 'date'
 require 'thor'
 require 'xcodeproj'
 require 'lanekit/version'
@@ -6,8 +7,8 @@ require 'active_support/inflector'
 
 module LaneKit
   @@objc_types = {
-    array: "NSArray *"
-    }
+    "array" => "NSArray *"
+  }
 
   # Model names are lower case
   # "Car" => "car", "Bigbird" => "bigbird"
@@ -55,6 +56,7 @@ module LaneKit
       include Thor::Actions
 
       desc "model [name] [name:type, name:type, ...] where type is [date|integer|string|<class_name>]", "Generates an Objective-C model for RestKit"
+      method_options :banner => ""
       def model(model_name, *attributes)
         @model_name = LaneKit.derive_model_name(model_name)
         @file_name = LaneKit.derive_file_name(@model_name)
