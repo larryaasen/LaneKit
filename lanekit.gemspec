@@ -18,6 +18,7 @@ Gem::Specification.new do |spec|
   spec.executables   = %w{ lanekit }
   spec.require_paths = %w{ lib }
 
+  spec.add_runtime_dependency 'thor', '~> 0.18.1'
   spec.add_runtime_dependency 'xcodeproj', '~> 0.5.5'
 
   spec.required_ruby_version = '>= 1.8.7'
