@@ -102,6 +102,10 @@ create  Classes/model/Contents.h
 create  Classes/model/Contents.m
 ```
 
+### Sample App
+The SportsFrames app is a fully functional sample app created to demonstrate the use of LaneKit in a real world app.
+Download the code from [GitHub](https://github.com/larryaasen/SportsFrames).
+
 ## Credits
 
 LaneKit was created by [Larry Aasen](https://github.com/larryaasen).
@@ -109,11 +113,6 @@ LaneKit was created by [Larry Aasen](https://github.com/larryaasen).
 ## Contact
 
 Follow Larry Aasen on Twitter [@LarryAasen](https://twitter.com/LarryAasen).
-
-### Creators
-
-[Larry Aasen](https://github.com/larryaasen)  
-[@larryaasen](https://twitter.com/larryaasen)
 
 ## License
 
