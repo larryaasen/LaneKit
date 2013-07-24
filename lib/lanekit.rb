@@ -55,12 +55,12 @@ module LaneKit
     class Generate < Thor
       include Thor::Actions
 
-      desc "model [name] [name:type, name:type, ...] where type is [date|integer|string|<class_name>]", "Generates an Objective-C model for RestKit"
-      method_options :banner => ""
+      desc "model [name] [name:type:relationship, name:type:relationship, ...] where type is [date|integer|string|<class_name>] and relationship (optional) is []", "Generates an Objective-C model for RestKit"
       def model(model_name, *attributes)
         @model_name = LaneKit.derive_model_name(model_name)
         @file_name = LaneKit.derive_file_name(@model_name)
         @class_name = LaneKit.derive_class_name(@model_name)
+        @lanekit_version = VERSION;
         
         @attributes = []
         @any_relationships = false
