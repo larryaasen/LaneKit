@@ -7,7 +7,11 @@
 // <%=@command%>
 //
 
-#import <Foundation/Foundation.h><% if @using_core_data %>
+#if defined(SEN_TESTING)
+#import <SenTestingKit/SenTestingKit.h>
+#else
+#import <Foundation/Foundation.h>
+#endif<% if @using_core_data %>
 #import <CoreData/CoreData.h><% end %>
 
 @class RKObjectMapping;
@@ -20,3 +24,13 @@
 + (RKObjectMapping *)responseMapping;
 
 @end
+
+#pragma mark SenTestingKit test cases
+
+#if defined(SEN_TESTING)
+@interface <%=@class_name%>Testing : SenTestCase
+
+- (void)testMapping;
+
+@end
+#endif

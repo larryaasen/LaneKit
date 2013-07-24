@@ -46,3 +46,26 @@
 }
 
 @end
+
+#pragma mark SenTestingKit test cases
+
+#if defined(SEN_TESTING)
+@implementation <%=@class_name%>Testing
+
+- (void)testMapping
+{
+    RKObjectMapping *requestMapping = [<%=@class_name%> requestMapping];
+    STAssertNotNil(requestMapping, @"[<%=@class_name%> requestMapping] returned nil.");
+
+    RKObjectMapping *responseMapping = [<%=@class_name%> responseMapping];
+    STAssertNotNil(responseMapping, @"[<%=@class_name%> responseMapping] returned nil.");
+
+    <%=@class_name%> *<%=@model_name%> = <%=@class_name%>.new;
+    STAssertNotNil(<%=@model_name%>, @"<%=@class_name%>.new returned nil.");
+<% @attributes.each_with_index do |attribute, index| %><% if !attribute[:relationship] %>
+    <%=@model_name%>.<%=attribute[:name]%> = @"value";
+    STAssertTrue([<%=@model_name%>.<%=attribute[:name]%> isEqualToString:@"value"], @"<%=@model_name%>.<%=attribute[:name]%> has incorrect value.");<% end %><% end %>
+}
+
+@end
+#endif
