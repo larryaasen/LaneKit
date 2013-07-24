@@ -1,6 +1,10 @@
-# To update the gem file for LaneKit, you must first build the gem.
+1) To update the gem file for LaneKit, you must first build the gem.
 $ gem build lanekit.gemspec
 
-# After building the gem file you must push the gem file to RubyGems.org. Update the version number in the name below.
-$ gem push lanekit-0.1.5.gem
+2) After building the gem file you must push the gem file to RubyGems.org. Update the version number in the name below.
+$ gem push lanekit-0.1.6.gem
 
+3) Go to https://rubygems.org/gems/lanekit to verify the gem was updated
+
+4) Download the updated gem
+$ gem update lanekit -or- gem install lanekit
