@@ -1,0 +1,30 @@
+//
+//  <%=@model_fixtures_file_name%>.m
+//
+//  This model fixture was created on <%=@model_date%> by LaneKit v<%=@lanekit_version%>.
+//
+
+#import "<%=@model_fixtures_file_name%>.h"<% @attributes.each do |attribute| %><% if attribute[:relationship] %>
+#import "<%=attribute[:relationship_fixtures_file_name]%>.h"<%end%><%end%>
+
+@implementation <%=@class_name%>Fixtures
+
++ (<%=@class_name%> *)one
+{
+  <%=@class_name%> *<%=@model_name%> = <%=@class_name%>.new;
+
+<% @attributes.each_with_index do |attribute, index| %><% if attribute[:relationship] %>  <%=@model_name%>.<%=attribute[:name]%> = @[<%=attribute[:relationship]%>Fixtures.one];<% else %><%=@model_name%>.<%=attribute[:name]%> = <%=attribute[:fixture_value]%>;<% end %>
+<% end %>
+  return <%=@model_name%>;
+}
+
++ (<%=@class_name%> *)two
+{
+  <%=@class_name%> *<%=@model_name%> = <%=@class_name%>.new;
+
+<% @attributes.each_with_index do |attribute, index| %><% if attribute[:relationship] %>  <%=@model_name%>.<%=attribute[:name]%> = @[<%=attribute[:relationship]%>Fixtures.one, <%=attribute[:relationship]%>Fixtures.two];<% else %>  <%=@model_name%>.<%=attribute[:name]%> = <%=attribute[:fixture_value]%>;<% end %>
+<% end %>
+  return <%=@model_name%>;
+}
+
+@end

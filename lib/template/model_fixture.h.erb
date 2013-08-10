@@ -1,0 +1,16 @@
+//
+//  <%=@model_fixtures_file_name%>.h
+//
+//  This model fixture was created on <%=@model_date%> by LaneKit v<%=@lanekit_version%>.
+//
+
+#import <Foundation/Foundation.h>
+#import "<%=@model_file_name%>.h"<% @attributes.each do |attribute| %><% if attribute[:relationship] %>
+#import "<%=attribute[:relationship]%>.h"<%end%><%end%>
+
+@interface <%=@class_name%>Fixtures : NSObject
+
++ (<%=@class_name%> *)one;
++ (<%=@class_name%> *)two;
+
+@end

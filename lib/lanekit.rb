@@ -49,16 +49,54 @@ module LaneKit
     end
     type
   end
+  
+  def self.objective_c_type_fixture_value(type_name)
+    if type_name == "array"
+      value = "@[]"
+    elsif type_name == "date"
+      value = "NSDate.new"
+    elsif type_name == "integer"
+      value = "[NSNumber numberWithInteger:1]"
+    elsif type_name == "string"
+      value = "@\"MyString\""
+    elsif type_name
+      value = "nil"
+    else
+      value = "nil"
+    end
+    value
+  end
+  
+  def self.objective_c_type_unit_test_assert(model_name, name, type_name)
+    if type_name == "array"
+      assert = "STAssertNotNil(#{model_name}.#{name}, @\"#{name} is nil\")"
+    elsif type_name == "date"
+      assert = "STAssertNotNil(#{model_name}.#{name}, @\"#{name} is nil\")"
+    elsif type_name == "integer"
+      assert = "STAssertTrue(#{model_name}.#{name}.integerValue == #{self.objective_c_type_fixture_value(type_name)}.integerValue, @\"#{name} not #{self.objective_c_type_fixture_value(type_name)}\")"
+    elsif type_name == "string"
+      assert = "STAssertTrue([#{model_name}.#{name} isEqualToString:#{self.objective_c_type_fixture_value(type_name)}], @\"#{name} not correct value\")"
+    elsif type_name
+      assert = "STAssertNotNil(#{model_name}.#{name}, @\"#{name} is nil\")"
+    else
+      assert = "STAssertNotNil(#{model_name}.#{name}, @\"#{name} is nil\")"
+    end
+    assert
+  end
 
   module Generators
 
     class Generate < Thor
       include Thor::Actions
 
-      desc "model [name] [name:type:relationship, name:type:relationship, ...] where type is [date|integer|string|<class_name>] and relationship (optional) is []", "Generates an Objective-C model for RestKit"
+      desc "model [name] [name:type:relationship, name:type:relationship, ...] where type is [date|integer|string|<class_name>] and relationship (optional) is []", "Generates an Objective-C model for RestKit including unit tests"
       def model(model_name, *attributes)
         @model_name = LaneKit.derive_model_name(model_name)
-        @file_name = LaneKit.derive_file_name(@model_name)
+
+        @model_file_name = LaneKit.derive_file_name(@model_name)
+        @model_fixtures_file_name = "#{@model_file_name}Fixtures"
+        @model_tests_file_name = "#{@model_file_name}Test"
+
         @class_name = LaneKit.derive_class_name(@model_name)
         @lanekit_version = VERSION;
         
@@ -72,7 +110,10 @@ module LaneKit
             :type => type,
             :name => name,
             :objective_c_type => objective_c_type,
-            :relationship => relationship
+            :relationship => relationship,
+            :relationship_fixtures_file_name => "#{relationship}Fixtures",
+            :fixture_value => LaneKit.objective_c_type_fixture_value(type),
+            :unit_test_assert => LaneKit.objective_c_type_unit_test_assert(@model_name, name, type)
           }
           @any_relationships = relationship ? true : @any_relationships
         }
@@ -95,7 +136,11 @@ module LaneKit
       no_commands {
         def initialize_stuff
           @model_date = Date.today.to_s
-          @models_folder = "Classes/model"
+          
+          @models_folder         = "Classes/Models"
+          @tests_fixtures_folder = "Classes/Tests/Fixtures"
+          @tests_models_folder = "Classes/Tests/Models"
+          
           @template_folder = File.expand_path('../template', __FILE__)
           @using_core_data = false
         end
@@ -106,20 +151,45 @@ module LaneKit
 
         def create_model_folders
           empty_directory @models_folder
+          empty_directory @tests_fixtures_folder
+          empty_directory @tests_models_folder
         end
       
         def create_model_files(model_name)
           # Files are created lowercase
           # Class names are camel case, videodata => VideoData
-          
+
+          # 1) Create the Models
           # Create the .h file
           source = "model.h.erb"
-          target = File.join(@models_folder, "#{@file_name}.h")
+          target = File.join(@models_folder, "#{@model_file_name}.h")
           template(source,target)
 
           # Create the .m file
           source = "model.m.erb"
-          target = File.join(@models_folder, "#{@file_name}.m")
+          target = File.join(@models_folder, "#{@model_file_name}.m")
+          template(source,target)
+
+          # 2) Create the Model Test Fixtures
+          # Create the .h file
+          source = "model_fixture.h.erb"
+          target = File.join(@tests_fixtures_folder, "#{@model_fixtures_file_name}.h")
+          template(source,target)
+
+          # Create the .m file
+          source = "model_fixture.m.erb"
+          target = File.join(@tests_fixtures_folder, "#{@model_fixtures_file_name}.m")
+          template(source,target)
+
+          # 3) Create the Model Tests
+          # Create the .h file
+          source = "model_test.h.erb"
+          target = File.join(@tests_models_folder, "#{@model_tests_file_name}.h")
+          template(source,target)
+
+          # Create the .m file
+          source = "model_test.m.erb"
+          target = File.join(@tests_models_folder, "#{@model_tests_file_name}.m")
           template(source,target)
         end
   
@@ -134,7 +204,7 @@ end
 
 module LaneKit  
   class CLI < Thor
-    desc "generate", "Generate a model compatible with RestKit"
+    desc "generate", "Generate a model compatible with RestKit that includes unit tests"
 
     # register(class_name, subcommand_alias, usage_list_string, description_string)
     register(LaneKit::Generators::Generate, "generate", "generate", "Runs a generator")

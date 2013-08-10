@@ -1,0 +1,51 @@
+//
+//  <%=@model_tests_file_name%>.m
+//
+//  This model test was created on <%=@model_date%> by LaneKit v<%=@lanekit_version%>.
+//
+
+#import "<%=@model_tests_file_name%>.h"
+#import "<%=@model_fixtures_file_name%>.h"
+
+@implementation <%=@class_name%>Test
+
+- (void)setUp
+{
+  [super setUp];
+  
+  // Set-up code here.
+}
+
+- (void)tearDown
+{
+  // Tear-down code here.
+  
+  [super tearDown];
+}
+
+- (void)test<%=@class_name%>NewOne
+{
+  <%=@class_name%> *<%=@model_name%> = <%=@class_name%>Fixtures.one;
+  STAssertNotNil(<%=@model_name%>, @"<%=@model_name%> is nil");
+
+<% @attributes.each_with_index do |attribute, index| %><% if !attribute[:relationship] %>  <%=attribute[:unit_test_assert]%>;<% end %>
+<% end %>}
+
+- (void)test<%=@class_name%>NewTwo
+{
+  <%=@class_name%> *<%=@model_name%> = <%=@class_name%>Fixtures.two;
+  STAssertNotNil(<%=@model_name%>, @"<%=@model_name%> is nil");
+
+<% @attributes.each_with_index do |attribute, index| %><% if !attribute[:relationship] %>  <%=attribute[:unit_test_assert]%>;<% end %>
+<% end %>}
+
+- (void)testMapping
+{
+  RKObjectMapping *requestMapping = [<%=@class_name%> requestMapping];
+  STAssertNotNil(requestMapping, @"[<%=@class_name%> requestMapping] returned nil.");
+  
+  RKObjectMapping *responseMapping = [<%=@class_name%> responseMapping];
+  STAssertNotNil(responseMapping, @"[<%=@class_name%> responseMapping] returned nil.");
+}
+
+@end
