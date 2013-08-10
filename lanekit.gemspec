@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = LaneKit::VERSION
   spec.authors       = ["Larry Aasen"]
   spec.email         = ["larryaasen@gmail.com"]
-  spec.description   = %q{an Objective-C model creator for RestKit.}
-  spec.summary       = %q{LaneKit is a Ruby command line app that creates Objective-C models for integration to RestKit.}
+  spec.description   = %q{a code generator for iOS Objective-C models for integration with RestKit.}
+  spec.summary       = %q{LaneKit is a code generator for iOS Objective-C models for integration with RestKit.}
   spec.homepage      = "https://github.com/LarryAasen/LaneKit"
   spec.license       = "MIT"
   
