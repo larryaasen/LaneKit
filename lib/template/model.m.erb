@@ -45,7 +45,16 @@
 <% end %><% end %>    };
 }
 
-// Returns the request RKObjectMapping
++ (NSString *)keyPath
+{
+  return @"<%=@model_name%>";
+}
+
++ (NSString *)pathPattern
+{
+  return nil;
+}
+
 + (RKObjectMapping *)requestMapping
 {
     RKObjectMapping *requestMapping = [RKObjectMapping requestMapping];
@@ -53,7 +62,6 @@
     return requestMapping;
 }
 
-// Returns the response RKObjectMapping
 + (RKObjectMapping *)responseMapping
 {
     RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[<%=@class_name%> class]];
