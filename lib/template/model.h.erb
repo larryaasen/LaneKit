@@ -7,15 +7,16 @@
 // <%=@command%>
 //
 
-#import <Foundation/Foundation.h><% if @using_core_data %>
-#import <CoreData/CoreData.h><% end %>
+<% if @using_core_data %>#import <CoreData/CoreData.h><% else %>#import <Foundation/Foundation.h><% end %>
 
 @class RKObjectMapping;
 
-@interface <%=@class_name%> : NSObject
+@interface <%=@class_name%> : <% if @using_core_data %>NSManagedObject<% else %>NSObject<% end %>
 <% @attributes.each do |attribute| %>
 @property (nonatomic,strong) <%=attribute[:objective_c_type]%><%=attribute[:name]%>;<% if attribute[:relationship] %>  // relates to: <%=attribute[:relationship]%><% end %><% end %>
-
+<% if @using_core_data %>
++ (NSString *)entityName;
++ (<%=@class_name%> *)create:(NSManagedObjectContext *)moc;<% end %>
 + (RKObjectMapping *)requestMapping;
 + (RKObjectMapping *)responseMapping;
 

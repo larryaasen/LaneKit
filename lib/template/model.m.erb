@@ -8,14 +8,35 @@
 #import "RestKit.h"<% @attributes.each do |attribute| %><% if attribute[:relationship] %>
 #import "<%=attribute[:relationship]%>.h"<%end%><%end%>
 
-@implementation <%=@class_name%>
+@implementation <%=@class_name%><% if @using_core_data %>
+
+// All properties in this NSManagedObject need to be defined with @dynamic<% @attributes.each do |attribute| %>
+@dynamic <%=attribute[:name]%>;<% end %><% end %>
 
 + (void)initialize
 {
   if (self == [<%=@class_name%> class])
   {
   }
+}<% if @using_core_data %>
+
++ (NSString *)entityName
+{
+    return NSStringFromClass([self class]);
 }
+
++ (<%=@class_name%> *)create:(NSManagedObjectContext *)moc
+{
+    <%=@class_name%> *entity = nil;
+    @try {
+        entity = [NSEntityDescription insertNewObjectForEntityForName:self.entityName inManagedObjectContext:moc];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"[%@ %@] %@", [self description], NSStringFromSelector(_cmd), exception);
+        @throw exception;
+    }
+    return entity;
+}<% end %>
 
 + (NSDictionary *)dictionaryForMappings
 {

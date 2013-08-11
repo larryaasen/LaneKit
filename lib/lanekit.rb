@@ -89,8 +89,19 @@ module LaneKit
     class Generate < Thor
       include Thor::Actions
 
-      desc "model [name] [name:type:relationship, name:type:relationship, ...] where type is [date|integer|string|<class_name>] and relationship (optional) is []", "Generates an Objective-C model for RestKit including unit tests"
+      desc "model NAME [attributes]", "Generates an Objective-C model for RestKit including unit tests"
+      long_desc <<-LONGDESC
+      Generates the Objective-C code for a model that is compatible with RestKit. It also generates test fixtures and unit tests.\n
+      NAME: the name of the model\n
+      [attributes] name:type:relationship, name:type:relationship, ...\n
+      where type is [date|integer|string|<class_name>] and relationship (optional) is the name of another class.
+      LONGDESC
+      
+      option :use_core_data, :type => :boolean, :default => false, :banner => "generate code compatible with Core Data", :aliases => :c     # option --use_core_data=true
       def model(model_name, *attributes)
+        @using_core_data = options[:use_core_data]
+        puts "  using Core Data: #{@using_core_data}"
+
         @model_name = LaneKit.derive_model_name(model_name)
 
         @model_file_name = LaneKit.derive_file_name(@model_name)
@@ -142,7 +153,6 @@ module LaneKit
           @tests_models_folder = "Classes/Tests/Models"
           
           @template_folder = File.expand_path('../template', __FILE__)
-          @using_core_data = false
         end
       
         def source_paths
@@ -204,9 +214,18 @@ end
 
 module LaneKit  
   class CLI < Thor
-    desc "generate", "Generate a model compatible with RestKit that includes unit tests"
+    
+    desc "generate", "Invoke a code generator"
+    long_desc "Invoke a code generator. There is only one generator so far: 'model' that generates Objective-C code compatible with RestKit that includes unit tests"
+    subcommand "generate", LaneKit::Generators::Generate
 
     # register(class_name, subcommand_alias, usage_list_string, description_string)
-    register(LaneKit::Generators::Generate, "generate", "generate", "Runs a generator")
+    #register(LaneKit::Generators::Generate, "generate", "generate", "Runs a code generator")
+    
+    desc "version", "Display the LaneKit version"
+    
+    def version
+      puts "LaneKit #{VERSION}"
+    end
   end
 end

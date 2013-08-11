@@ -13,7 +13,7 @@
 {
   <%=@class_name%> *<%=@model_name%> = <%=@class_name%>.new;
 
-<% @attributes.each_with_index do |attribute, index| %><% if attribute[:relationship] %>  <%=@model_name%>.<%=attribute[:name]%> = @[<%=attribute[:relationship]%>Fixtures.one];<% else %><%=@model_name%>.<%=attribute[:name]%> = <%=attribute[:fixture_value]%>;<% end %>
+<% @attributes.each_with_index do |attribute, index| %><% if attribute[:relationship] %>  <%=@model_name%>.<%=attribute[:name]%> = @[<%=attribute[:relationship]%>Fixtures.one];<% else %>  <%=@model_name%>.<%=attribute[:name]%> = <%=attribute[:fixture_value]%>;<% end %>
 <% end %>
   return <%=@model_name%>;
 }
