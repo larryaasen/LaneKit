@@ -67,7 +67,7 @@
     RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[<%=@class_name%> class]];
     [mapping addAttributeMappingsFromDictionary:[self dictionaryForMappings]];
 <% @attributes.each_with_index do |attribute, index| %><% if attribute[:relationship] %>
-    [mapping addRelationshipMappingWithSourceKeyPath:@"<%=attribute[:name]%>" mapping:[<%=attribute[:relationship]%> modelMapping]];
+    [mapping addRelationshipMappingWithSourceKeyPath:@"<%=attribute[:name]%>" mapping:[<%=attribute[:relationship]%> responseMapping]];
 <% end %><% end %>    return mapping;
 }
 
