@@ -50,6 +50,23 @@ module LaneKit
     type
   end
   
+  def self.objective_c_type_fixture_json(type_name)
+    if type_name == "array"
+      value = "[]"
+    elsif type_name == "date"
+      value = "03/01/2012"
+    elsif type_name == "integer"
+      value = "1"
+    elsif type_name == "string"
+      value = "MyString"
+    elsif type_name
+      value = ""
+    else
+      value = ""
+    end
+    value
+  end
+  
   def self.objective_c_type_fixture_value(type_name)
     if type_name == "array"
       value = "@[]"
@@ -123,6 +140,7 @@ module LaneKit
             :objective_c_type => objective_c_type,
             :relationship => relationship,
             :relationship_fixtures_file_name => "#{relationship}Fixtures",
+            :fixture_json => LaneKit.objective_c_type_fixture_json(type),
             :fixture_value => LaneKit.objective_c_type_fixture_value(type),
             :unit_test_assert => LaneKit.objective_c_type_unit_test_assert(@model_name, name, type)
           }
@@ -189,6 +207,11 @@ module LaneKit
           # Create the .m file
           source = "model_fixture.m.erb"
           target = File.join(@tests_fixtures_folder, "#{@model_fixtures_file_name}.m")
+          template(source,target)
+
+          # Create the json file
+          source = "model_fixture.json.erb"
+          target = File.join(@tests_fixtures_folder, "#{@model_fixtures_file_name}.json")
           template(source,target)
 
           # 3) Create the Model Tests

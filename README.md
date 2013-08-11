@@ -1,6 +1,5 @@
 ## LaneKit
 
-
 LaneKit is a code generator for iOS Objective-C models for integration with RestKit. It includes support
 for unit testing with SenTestingKit including fixtures and tests. LaneKit is a command line app written
 in Ruby and packaged as a Ruby Gem.
@@ -12,7 +11,7 @@ in Ruby and packaged as a Ruby Gem.
 * properly implemented models
 * consistent Objective-C code
 * unit tests
-* test fixtures
+* test fixtures in JSON and Objective-C
 * tested code
 * rapid development
 * easy integration with RestKit
