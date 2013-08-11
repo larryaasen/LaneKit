@@ -8,6 +8,17 @@ in Ruby and packaged as a Ruby Gem.
 - [Source code for LaneKit](https://github.com/LarryAasen/LaneKit/zipball/master) from [GitHub](http://github.com).
 - Questions? [Stack Overflow](http://stackoverflow.com/questions/tagged/lanekit) is the best place to find answers.
 
+## Benefits
+* properly implemented models
+* consistent Objective-C code
+* unit tests
+* test fixtures
+* tested code
+* rapid development
+* easy integration with RestKit
+* enhanced productivity of junior developers
+* reduces dependency on senior developers
+
 ## How To Get Started
 
 1. Install the LaneKit Ruby Gem from RubyGems.org
