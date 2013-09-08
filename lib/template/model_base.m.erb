@@ -1,0 +1,66 @@
+//
+//  <%=@model_base_file_name%>.m
+//
+//  This model was created on <%=@model_date%> by LaneKit v<%=@lanekit_version%>.
+//
+// The following LaneKit command was used to generate this model:
+// <%=@command%>
+//
+
+#import "<%=@model_base_file_name%>.h"
+
+@implementation <%=@model_base_class_name%><% if @using_core_data %>
+
++ (NSString *)entityName
+{
+    return NSStringFromClass([self class]);
+}
+
++ (<%=@class_name%> *)create:(NSManagedObjectContext *)moc
+{
+    <%=@class_name%> *entity = nil;
+    @try {
+        entity = [NSEntityDescription insertNewObjectForEntityForName:self.entityName inManagedObjectContext:moc];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"[%@ %@] %@", [self description], NSStringFromSelector(_cmd), exception);
+        @throw exception;
+    }
+    return entity;
+}<% end %>
+
+// Subclasses may need to override this method
++ (NSDictionary *)dictionaryForMappings
+{
+  return @{
+           };
+}
+
+// Subclasses should override this method
++ (NSString *)keyPath
+{
+  return nil;
+}
+
+// Subclasses may need to override this method
++ (NSString *)pathPattern
+{
+  return nil;
+}
+
++ (RKObjectMapping *)requestMapping
+{
+  RKObjectMapping *requestMapping = [RKObjectMapping requestMapping];
+  [requestMapping addAttributeMappingsFromDictionary:[self dictionaryForMappings]];
+  return requestMapping;
+}
+
+// Subclasses may need to override this method
++ (RKObjectMapping *)responseMapping
+{
+  RKObjectMapping *mapping = [RKObjectMapping mappingForClass:self.class];
+  [mapping addAttributeMappingsFromDictionary:[self dictionaryForMappings]];
+  return mapping;
+}
+
+@end

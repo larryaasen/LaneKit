@@ -128,6 +128,11 @@ module LaneKit
         @class_name = LaneKit.derive_class_name(@model_name)
         @lanekit_version = VERSION;
         
+        # Model Base Class
+        @model_base_name = "LKModel"
+        @model_base_class_name = "LKModel"
+        @model_base_file_name = "LKModel"
+        
         @attributes = []
         @any_relationships = false
         
@@ -209,9 +214,14 @@ module LaneKit
           target = File.join(@tests_fixtures_folder, "#{@model_fixtures_file_name}.m")
           template(source,target)
 
-          # Create the json file
+          # Create the one json file
           source = "model_fixture.json.erb"
-          target = File.join(@tests_fixtures_folder, "#{@model_fixtures_file_name}.json")
+          target = File.join(@tests_fixtures_folder, "#{@model_fixtures_file_name}.one.json")
+          template(source,target)
+
+          # Create the two json file
+          source = "model_fixture.json.erb"
+          target = File.join(@tests_fixtures_folder, "#{@model_fixtures_file_name}.two.json")
           template(source,target)
 
           # 3) Create the Model Tests
@@ -223,6 +233,17 @@ module LaneKit
           # Create the .m file
           source = "model_test.m.erb"
           target = File.join(@tests_models_folder, "#{@model_tests_file_name}.m")
+          template(source,target)
+          
+          # 4) Create the base model
+          # Create the .h file
+          source = "model_base.h.erb"
+          target = File.join(@models_folder, "#{@model_base_file_name}.h")
+          template(source,target)
+
+          # Create the .m file
+          source = "model_base.m.erb"
+          target = File.join(@models_folder, "#{@model_base_file_name}.m")
           template(source,target)
         end
   

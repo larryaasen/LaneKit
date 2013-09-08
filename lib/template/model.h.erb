@@ -7,19 +7,10 @@
 // <%=@command%>
 //
 
-<% if @using_core_data %>#import <CoreData/CoreData.h><% else %>#import <Foundation/Foundation.h><% end %>
+#import "<%=@model_base_file_name%>.h"
 
-@class RKObjectMapping;
-
-@interface <%=@class_name%> : <% if @using_core_data %>NSManagedObject<% else %>NSObject<% end %>
+@interface <%=@class_name%> : <%=@model_base_class_name%>
 <% @attributes.each do |attribute| %>
 @property (nonatomic,strong) <%=attribute[:objective_c_type]%><%=attribute[:name]%>;<% if attribute[:relationship] %>  // relates to: <%=attribute[:relationship]%><% end %><% end %>
-<% if @using_core_data %>
-+ (NSString *)entityName;
-+ (<%=@class_name%> *)create:(NSManagedObjectContext *)moc;<% end %>
-+ (NSString *)keyPath;        // Used by providers. The subset of the parsed response for which the mapping is to be used.
-+ (NSString *)pathPattern;    // Used by providers. The pattern that matches against URLs for which the mapping should be used.
-+ (RKObjectMapping *)requestMapping;    // Used by providers. Returns the request RKObjectMapping
-+ (RKObjectMapping *)responseMapping;   // Used by providers. Returns the response RKObjectMapping
 
 @end
