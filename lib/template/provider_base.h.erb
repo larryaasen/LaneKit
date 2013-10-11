@@ -1,0 +1,23 @@
+//
+//  <%=@provider_base_file_name%>.h
+//
+//  This base provider was created on <%=config[:generate_date]%> by LaneKit v<%=config[:lanekit_version]%>.
+//
+// The following LaneKit command was used to generate this file:
+// <%=config[:command]%>
+//
+
+#import "RestKit.h"
+
+typedef void(^<%=@provider_base_class_name%>CallbackBlock)(NSError *error, id result);
+
+@interface <%=@provider_base_class_name%> : NSObject
+
+@property (nonatomic,strong) NSString *baseURL;
+
+- (void)downloadWithCompletionBlock:(LKResourceProviderCallbackBlock)completionBlock;
+- (Class)modelClass;
+- (id)processResult:(RKMappingResult *)mappingResult withError:(NSError **)error;
+- (RKResponseDescriptor *)responseDescriptor;
+
+@end

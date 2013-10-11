@@ -1,7 +1,10 @@
 //
 //  <%=@model_fixtures_file_name%>.m
 //
-//  This model fixture was created on <%=@model_date%> by LaneKit v<%=@lanekit_version%>.
+//  This model fixture was created on <%=config[:generate_date]%> by LaneKit v<%=config[:lanekit_version]%>.
+//
+// The following LaneKit command was used to generate this file:
+// <%=config[:command]%>
 //
 
 #import "<%=@model_fixtures_file_name%>.h"<% @attributes.each do |attribute| %><% if attribute[:relationship] %>

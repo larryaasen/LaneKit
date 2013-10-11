@@ -1,15 +1,15 @@
 //
-//  <%=@model_base_file_name%>.h
+//  LKModel.h
 //
-//  This base model was created on <%=config[:generate_date]%> by LaneKit v<%=config[:lanekit_version]%>.
+//  This base model was created on 2013-10-10 by LaneKit v0.2.1.
 //
 // The following LaneKit command was used to generate this file:
-// <%=config[:command]%>
+// lanekit generate model one
 //
 
 #import "RestKit.h"
 
-@interface <%=@model_base_class_name%> : <% if @using_core_data %>NSManagedObject<% else %>NSObject<% end %>
+@interface LKModel : NSObject
 
 + (NSDictionary *)dictionaryForRequestMappings;  // Used by providers.
 + (NSDictionary *)dictionaryForResponseMappings; // Used by providers.
@@ -17,7 +17,5 @@
 + (NSString *)pathPattern;                // Used by providers. The pattern that matches against URLs for which the mapping should be used.
 + (RKObjectMapping *)requestMapping;      // Used by providers. Returns the request RKObjectMapping
 + (RKObjectMapping *)responseMapping;     // Used by providers. Returns the response RKObjectMapping
-<% if @using_core_data %>
-+ (NSString *)entityName;
-+ (<%=@class_name%> *)create:(NSManagedObjectContext *)moc;<% end %>
+
 @end

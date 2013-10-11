@@ -1,0 +1,27 @@
+//
+//  <%=@provider_file_name%>.m
+//
+//  This provider was created on <%=config[:generate_date]%> by LaneKit v<%=config[:lanekit_version]%>.
+//
+// The following LaneKit command was used to generate this file:
+// <%=config[:command]%>
+//
+
+#import "<%=@provider_file_name%>.h"
+#import "<%=@model_file_name%>.h"
+
+@implementation <%=@provider_name%>
+
+- (id)processResult:(RKMappingResult *)mappingResult withError:(NSError **)error
+{
+  <%=@model_class_name%> *results = [mappingResult firstObject];
+  id result = results;
+  return result;
+}
+
+- (NSString *)baseURL
+{
+  return @"@<%=@provider_url%>";
+}
+
+@end

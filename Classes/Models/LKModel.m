@@ -1,33 +1,15 @@
 //
-//  <%=@model_base_file_name%>.m
+//  LKModel.m
 //
-//  This base model was created on <%=config[:generate_date]%> by LaneKit v<%=config[:lanekit_version]%>.
+//  This base model was created on 2013-10-10 by LaneKit v0.2.1.
 //
 // The following LaneKit command was used to generate this file:
-// <%=config[:command]%>
+// lanekit generate model one
 //
 
-#import "<%=@model_base_file_name%>.h"
+#import "LKModel.h"
 
-@implementation <%=@model_base_class_name%><% if @using_core_data %>
-
-+ (NSString *)entityName
-{
-    return NSStringFromClass([self class]);
-}
-
-+ (<%=@class_name%> *)create:(NSManagedObjectContext *)moc
-{
-    <%=@class_name%> *entity = nil;
-    @try {
-        entity = [NSEntityDescription insertNewObjectForEntityForName:self.entityName inManagedObjectContext:moc];
-    }
-    @catch (NSException *exception) {
-        NSLog(@"[%@ %@] %@", [self description], NSStringFromSelector(_cmd), exception);
-        @throw exception;
-    }
-    return entity;
-}<% end %>
+@implementation LKModel
 
 // Dictionary to convert self to JSON
 // Subclasses may need to override this method

@@ -1,7 +1,10 @@
 //
 //  <%=@model_file_name%>.m
 //
-//  This model was created on <%=@model_date%> by LaneKit v<%=@lanekit_version%>.
+//  This model was created on <%=config[:generate_date]%> by LaneKit v<%=config[:lanekit_version]%>.
+//
+// The following LaneKit command was used to generate this file:
+// <%=config[:command]%>
 //
 
 #import "<%=@model_file_name%>.h"<% @attributes.each do |attribute| %><% if attribute[:relationship] %>
@@ -12,10 +15,21 @@
 // All properties in this NSManagedObject need to be defined with @dynamic<% @attributes.each do |attribute| %>
 @dynamic <%=attribute[:name]%>;<% end %><% end %>
 
-+ (NSDictionary *)dictionaryForMappings
+// Dictionary to convert self to JSON
++ (NSDictionary *)dictionaryForRequestMappings
 {
     return @{
-<% @attributes.each_with_index do |attribute, index| %><% if !attribute[:relationship] %>        @"<%=attribute[:name]%>": @"<%=attribute[:name]%>"<% if index != @attributes.size-1 %>,<% end %>
+             // source key path : destination attribute name
+<% @attributes.each_with_index do |attribute, index| %><% if !attribute[:relationship] %>             @"<%=attribute[:name]%>": @"<%=attribute[:name]%>"<% if index != @attributes.size-1 %>,<% end %>
+<% end %><% end %>    };
+}
+
+// Dictionary to convert JSON to self
++ (NSDictionary *)dictionaryForResponseMappings
+{
+  return @{
+           // source key path : destination attribute name
+<% @attributes.each_with_index do |attribute, index| %><% if !attribute[:relationship] %>             @"<%=attribute[:name]%>": @"<%=attribute[:name]%>"<% if index != @attributes.size-1 %>,<% end %>
 <% end %><% end %>    };
 }
 
@@ -27,7 +41,7 @@
 + (RKObjectMapping *)responseMapping
 {
     RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[<%=@class_name%> class]];
-    [mapping addAttributeMappingsFromDictionary:[self dictionaryForMappings]];
+    [mapping addAttributeMappingsFromDictionary:[self dictionaryForResponseMappings]];
 <% @attributes.each_with_index do |attribute, index| %><% if attribute[:relationship] %>
     [mapping addRelationshipMappingWithSourceKeyPath:@"<%=attribute[:name]%>" mapping:[<%=attribute[:relationship]%> responseMapping]];
 <% end %><% end %>    return mapping;
