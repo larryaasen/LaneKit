@@ -8,20 +8,24 @@
 //
 
 #import "<%=@provider_file_name%>.h"
-#import "<%=@model_file_name%>.h"
 
 @implementation <%=@provider_name%>
+
+- (NSString *)baseURL
+{
+  return @"<%=@provider_url%>";
+}
+
+- (Class)modelClass
+{
+  return [<%=@model_class_name%> class];
+}
 
 - (id)processResult:(RKMappingResult *)mappingResult withError:(NSError **)error
 {
   <%=@model_class_name%> *results = [mappingResult firstObject];
   id result = results;
   return result;
-}
-
-- (NSString *)baseURL
-{
-  return @"@<%=@provider_url%>";
 }
 
 @end
