@@ -13,10 +13,10 @@ module LaneKit
   
     def provider(name, model_name, url)
       @using_core_data = options[:use_core_data]
-      puts " using Core Data: #{@using_core_data}"
-      puts "            name: #{name}"        
-      puts "      model_name: #{model_name}"        
-      puts "             url: #{url}"
+      #puts " using Core Data: #{@using_core_data}"
+      #puts "            name: #{name}"        
+      #puts "      model_name: #{model_name}"        
+      #puts "             url: #{url}"
 
       @provider_name = "#{LaneKit.derive_class_name(name)}Provider"
       @model_name = LaneKit.derive_model_name(model_name)

@@ -13,8 +13,8 @@ module LaneKit
       
       def model(model_name, *attributes)
         @using_core_data = options[:use_core_data]
-        puts " using Core Data: #{@using_core_data}"
-        puts "            name: #{model_name}"        
+        #puts " using Core Data: #{@using_core_data}"
+        #puts "            name: #{model_name}"        
 
         @model_name = LaneKit.derive_model_name(model_name)
 
