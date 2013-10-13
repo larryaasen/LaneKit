@@ -2,7 +2,7 @@
 $ gem build lanekit.gemspec
 
 2) After building the gem file you must push the gem file to RubyGems.org. Update the version number in the name below.
-$ gem push lanekit-0.1.7.gem
+$ gem push lanekit-0.2.1.gem
 
 3) Go to https://rubygems.org/gems/lanekit to verify the gem was updated
 
