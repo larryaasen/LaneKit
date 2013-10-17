@@ -1,9 +1,5 @@
 //
 //  lanekit_ios_projectTests.m
-//  lanekit-ios-projectTests
-//
-//  Created by Larry Aasen on 10/13/13.
-//  Copyright (c) 2013 LaneKit. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
