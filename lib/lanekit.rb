@@ -106,6 +106,15 @@ module LaneKit
     end
     assert
   end
+  
+  def self.validate_app_name(app_name)
+    if app_name.length < 2
+      return "app name must be at least two characters long"
+    elsif app_name.include? " "
+      return "app name cannot include spaces"
+    end
+    return nil
+  end
 
 end
 

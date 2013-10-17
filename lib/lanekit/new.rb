@@ -7,14 +7,26 @@ module LaneKit
     
     desc "new APP_PATH [options]", "Create a new iOS app"
     def new(app_path)
-      # TBD: make sure CocoaPods is installed
-      @original_wd = Dir.pwd
+      app_path = app_path.strip
       @app_path = app_path
       @app_path_full = File.expand_path app_path
       @app_name = LaneKit::derive_app_name(app_path)
+      
+      validate_message = LaneKit.validate_app_name(@app_name)
+      if validate_message
+        puts "***error: #{validate_message}"
+        return
+      end
+
+      if File.exists?(@app_path_full)
+        puts "Can't create a new LaneKit app in an existing folder: #{@app_path_full}"
+        return
+      end
+
       @ios_version = '6.0'
+      @original_wd = Dir.pwd
         
-      self.create_app
+      #self.create_app
       self.create_project
     end
     
@@ -58,6 +70,7 @@ module LaneKit
             
             new_path = File.join path, new_name
             FileUtils.mv old_path, new_path
+            say_status :rename, new_path, :yellow
           end
       
           if File.directory?(new_path)
@@ -69,6 +82,7 @@ module LaneKit
               string = string.gsub!(template_name, app_name)
               if string != nil
                 IO.write(new_path, string)
+                say_status :update, new_path, :yellow
               end
             
             rescue
