@@ -20,6 +20,7 @@ in Ruby and packaged as a Ruby Gem.}
   spec.executables   = %w{ lanekit }
   spec.require_paths = %w{ lib }
 
+  spec.add_runtime_dependency 'cocoapods', '~> 0.24.0'
   spec.add_runtime_dependency 'thor', '~> 0.18.1'
   spec.add_runtime_dependency 'xcodeproj', '~> 0.5.5'
 

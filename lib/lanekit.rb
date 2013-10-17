@@ -115,6 +115,14 @@ module LaneKit
     end
     return nil
   end
+  
+  def self.gem_available?(gemname)
+  if Gem::Specification.methods.include?(:find_all_by_name) 
+    not Gem::Specification.find_all_by_name(gemname).empty?
+   else
+     Gem.available?(gemname)
+   end
+ end
 
 end
 
