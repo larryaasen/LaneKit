@@ -10,6 +10,12 @@ module LaneKit
     "array" => "NSArray *"
   }
 
+  # Returns an app name from a folder path. App names are lower case
+  # "Tracker" => "tracker", "~/Projects/Runner" => "runner"
+  def self.derive_app_name(app_path)
+    app_name = File.basename(app_path).to_s.downcase
+  end
+
   # Model names are lower case
   # "Car" => "car", "Bigbird" => "bigbird"
   def self.derive_model_name(name)
@@ -105,11 +111,11 @@ end
 
 module LaneKit
   class CLI < Thor
-        
     script_name = File.basename($0)
     script_args = ARGV.join(' ')
     
     @command = "#{script_name} #{script_args}"
+    @@template_folder = File.expand_path('../template', __FILE__)
 
     no_commands do    
       def self.command
@@ -119,15 +125,16 @@ module LaneKit
     
     map ["-v", "--version"] => :version
 
+    require 'lanekit/generate'
     desc "generate", "Invoke a code generator"
     long_desc <<-LONGDESC
     Invoke a code generator:\n
     -'model' that generates Objective-C code compatible with RestKit that includes unit tests\n
     -'provider' that generates Objective-C code compatible with RestKit
     LONGDESC
-    
-    require 'lanekit/generate'
     subcommand "generate", LaneKit::Generate
+
+    require 'lanekit/new'
     
     desc "version", "Display the LaneKit version"
     def version

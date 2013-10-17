@@ -1,7 +1,6 @@
 class LaneKit::Generate < Thor
   
   @@lanekit_version = LaneKit::VERSION;
-  @@template_folder = File.expand_path('../../template', __FILE__)
   @@generate_date = Date.today.to_s
 
   no_tasks do
