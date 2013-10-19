@@ -34,10 +34,9 @@ module LaneKit
       @original_wd = Dir.pwd
         
       self.create_project
-        
       self.change_filenames(@app_path_full, @app_name, @ios_template_name)
-      
       self.add_cocoapods
+      self.clean_workspace
     end
     
     no_tasks {
@@ -46,6 +45,18 @@ module LaneKit
       #  app_target = proj.new_target(:application, @app_name, :ios, proj.products_group)
       #  proj.save
       #end
+      
+      def clean_workspace
+        # Remove the extra project that CocoaPods added to the workspace
+        workspace_path = File.join(@app_path_full, "#{@app_name}.xcworkspace")
+        say_status :clean, workspace_path, :yellow
+        workspace = Xcodeproj::Workspace.new_from_xcworkspace(workspace_path)
+        container = "container:#{@app_name}/#{@app_name}.xcodeproj"
+        if workspace.include?(container)
+          workspace.projpaths.delete(container)
+          workspace.save_as(workspace_path)
+        end
+      end
       
       def add_cocoapods
         Dir.chdir(@project_path) do
