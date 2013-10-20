@@ -116,6 +116,15 @@ module LaneKit
     return nil
   end
   
+  def self.validate_bundle_id(bundle_id)
+    if bundle_id.length < 2
+      return "bundle id must be at least two characters long"
+    elsif bundle_id.include? " "
+      return "bundle id cannot include spaces"
+    end
+    return nil
+  end
+  
   def self.gem_available?(gemname)
   if Gem::Specification.methods.include?(:find_all_by_name) 
     not Gem::Specification.find_all_by_name(gemname).empty?

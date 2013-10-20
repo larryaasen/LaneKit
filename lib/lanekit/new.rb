@@ -5,10 +5,11 @@ module LaneKit
     
     include Thor::Actions
     
-    desc "new APP_PATH [options]", "Create a new iOS app"
-    def new(app_path)
+    desc "new APP_PATH [BUNDLE_ID]", "Create a new iOS app"
+    def new(app_path, bundle_id=nil)
       app_path = app_path.strip
       @app_path = app_path
+      @bundle_id = bundle_id
 
       @app_name = LaneKit::derive_app_name(app_path)
       validate_message = LaneKit.validate_app_name(@app_name)
@@ -23,6 +24,14 @@ module LaneKit
         return
       end
       
+      if @bundle_id != nil
+        validate_message = LaneKit.validate_bundle_id(@bundle_id)
+        if validate_message
+          puts "***error: #{validate_message}"
+          return
+        end
+      end
+      
       if !LaneKit.gem_available?('cocoapods')
         puts "The Ruby gem cocoapods is not installed. This gem is required by LaneKit.\nInstall command: gem install cocoapods"
         return
@@ -35,6 +44,7 @@ module LaneKit
         
       self.create_project
       self.change_filenames(@app_path_full, @app_name, @ios_template_name)
+      self.change_bundle_id(@bundle_id) if @bundle_id != nil
       self.add_cocoapods
       self.clean_workspace
     end
@@ -56,6 +66,13 @@ module LaneKit
           workspace.projpaths.delete(container)
           workspace.save_as(workspace_path)
         end
+      end
+      
+      def change_bundle_id(bundle_id)
+        plistbuddy_path = '/usr/libexec/PlistBuddy'
+        plist_file = "#{@app_name}-Info.plist"
+        info_plist_path = File.join(@project_path, File.join("#{@app_name}", plist_file))
+        system("#{plistbuddy_path} -c \"Set :CFBundleIdentifier #{bundle_id}\" #{info_plist_path}")
       end
       
       def add_cocoapods
