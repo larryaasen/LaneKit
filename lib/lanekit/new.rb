@@ -89,7 +89,7 @@ module LaneKit
       end
 
       def source_paths
-        [@@template_folder]
+        LaneKit.template_folders
       end
       
       def change_filenames path, app_name, template_name

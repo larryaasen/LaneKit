@@ -9,6 +9,11 @@ module LaneKit
   @@objc_types = {
     "array" => "NSArray *"
   }
+  @template_folder = File.expand_path('../template', __FILE__)
+
+  def self.template_folders
+    [@template_folder]
+  end
 
   # Returns an app name from a folder path. App names are lower case
   # "Tracker" => "tracker", "~/Projects/Runner" => "runner"
@@ -141,7 +146,6 @@ module LaneKit
     script_args = ARGV.join(' ')
     
     @command = "#{script_name} #{script_args}"
-    @@template_folder = File.expand_path('../template', __FILE__)
 
     no_commands do    
       def self.command

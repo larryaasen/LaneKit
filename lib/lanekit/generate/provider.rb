@@ -47,7 +47,7 @@ module LaneKit
       end
 
       def source_paths
-        [@@template_folder]
+        LaneKit.template_folders
       end
 
       def create_provider_folders
