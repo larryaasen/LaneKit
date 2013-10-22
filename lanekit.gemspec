@@ -15,14 +15,14 @@ including fixtures and tests. LaneKit is a command line app written in Ruby and 
   spec.homepage      = "https://github.com/LarryAasen/LaneKit"
   spec.license       = "MIT"
   
-  spec.files = Dir["lib/**/*.rb"] + Dir["lib/**/*.erb"] + %w{ bin/lanekit README.md LICENSE }
+  spec.files = Dir["lib/**/*.rb"] + Dir["lib/**/*.erb"] + Dir.glob("lib/{template}/**/*") + %w{ bin/lanekit README.md LICENSE }
 
   spec.executables   = %w{ lanekit }
   spec.require_paths = %w{ lib }
 
   spec.add_runtime_dependency 'cocoapods', '~> 0.24.0'
   spec.add_runtime_dependency 'thor', '~> 0.18.1'
-  spec.add_runtime_dependency 'xcodeproj', '~> 0.5.5'
+  spec.add_runtime_dependency 'xcodeproj', '~> 0.10.0'
 
   spec.required_ruby_version = '>= 1.8.7'
 end
