@@ -43,12 +43,17 @@ module LaneKit
       @original_wd = Dir.pwd
         
       self.create_project
+      self.add_gitignore
       self.change_filenames(@app_path_full, @app_name, @ios_template_name)
       self.change_bundle_id(@bundle_id) if @bundle_id != nil
       self.add_cocoapods
       self.clean_workspace
     end
-    
+
+    def self.source_root
+      File.dirname('./')
+    end
+
     no_tasks {
       #def create_xcodeproj_project
       #  proj = Xcodeproj::Project.new(File.join(@app_path, "#{@app_name}.xcodeproj"))
@@ -80,6 +85,24 @@ module LaneKit
           puts "Installing CocoaPods for RestKit"
           system "pod install"
         end
+      end
+      
+      def add_gitignore
+        # Download the .gitignore file from GitHub
+        require 'net/https'
+        ignore_file_uri = URI("http://raw.github.com/github/gitignore/master/Objective-C.gitignore")
+        ignore_file_path = File.join(@app_path, ".gitignore")
+        say_status :create, ignore_file_path
+        
+        response = Net::HTTP.start(ignore_file_uri.host, use_ssl: true, verify_mode: OpenSSL::SSL::VERIFY_NONE) do |http|
+          http.get ignore_file_uri.request_uri
+        end
+
+        require_text = response.body
+        open(ignore_file_path, "wb") do |file|
+          file.write(require_text)
+        end
+        
       end
       
       def create_project
