@@ -40,7 +40,12 @@ module LaneKit
     file_name = name.to_s.capitalize
     file_name
   end
-  
+
+  def self.does_text_exist_in_file?(file_path, text)
+    found_text = open(file_path) { |f| f.grep(/#{text}/) }
+    exists = found_text && found_text.count > 0
+  end
+
   def self.objective_c_type(type_name)
     type = @@objc_types[type_name]
     return type if type

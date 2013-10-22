@@ -26,6 +26,7 @@ class LaneKit::Generate < Thor
 
   require 'lanekit/generate/model'
   require 'lanekit/generate/provider'
+  require 'lanekit/generate/urbanairship'
 
   class_option :use_core_data, :type => :boolean, :default => false, :banner => "generate code compatible with Core Data (the default is false)", :aliases => "-c"     # option --use_core_data=true
 end
