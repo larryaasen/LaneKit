@@ -3,7 +3,15 @@ class LaneKit::Generate < Thor
   @@lanekit_version = LaneKit::VERSION;
   @@generate_date = Date.today.to_s
 
+  def self.source_root
+    File.dirname('./')
+  end
+
   no_tasks do
+    def source_paths
+      LaneKit.template_folders
+    end
+
     def update_xcode_project
       xcworkspace_path = ""
       Xcodeproj::Workspace.new_from_xcworkspace(xcworkspace_path)

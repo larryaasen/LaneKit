@@ -3,7 +3,7 @@ module LaneKit
     
     include Thor::Actions
 
-    desc "provider [options] NAME MODEL_NAME URL", "Generates an Objective-C resource provider for RestKit including unit tests"
+    desc "provider [options] NAME MODEL_NAME [URL]", "Generates an Objective-C resource provider for RestKit including unit tests"
     long_desc <<-LONGDESC
     Generates the Objective-C code for a resource provider that is compatible with RestKit. It also generates test fixtures and unit tests.\n
     NAME: the name of the provider\n
@@ -11,7 +11,7 @@ module LaneKit
     URL: the HTTP URL to the data\n
     LONGDESC
   
-    def provider(name, model_name, url)
+    def provider(name, model_name, url=nil)
       @using_core_data = options[:use_core_data]
       #puts " using Core Data: #{@using_core_data}"
       #puts "            name: #{name}"        
@@ -28,10 +28,6 @@ module LaneKit
       self.create_provider_folders
       self.create_provider_files
     end
-
-    def self.source_root
-      File.dirname('./')
-    end
       
     no_commands do
 
@@ -44,10 +40,6 @@ module LaneKit
         @provider_base_file_name = "LKResourceProvider"
   
         @provider_file_name = @provider_name
-      end
-
-      def source_paths
-        LaneKit.template_folders
       end
 
       def create_provider_folders

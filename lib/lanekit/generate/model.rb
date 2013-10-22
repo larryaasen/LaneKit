@@ -48,10 +48,6 @@ module LaneKit
         self.create_model_files
         self.update_xcode_project
       end
-
-      def self.source_root
-        File.dirname('./')
-      end
       
       no_tasks {
         def initialize_model
@@ -64,10 +60,6 @@ module LaneKit
           @tests_fixtures_folder = "Classes/Tests/Fixtures"
           @tests_models_folder   = "Classes/Tests/Models"
           
-        end
-      
-        def source_paths
-          LaneKit.template_folders
         end
 
         def create_model_folders
