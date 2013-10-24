@@ -5,29 +5,10 @@ module LaneKit
 
     desc "urbanairship", "Generates classes for Urban Airship integration"  
     def urbanairship()
-      @podfile_path = File.expand_path('Podfile')
-      if !File.exists?(@podfile_path)
-        puts "Can't find Podfile #{@podfile_path}"
-        return
-      end
-
-      pod_name = 'UrbanAirship-iOS-SDK'
-      if !LaneKit.does_text_exist_in_file?(@podfile_path, pod_name)
-        add_pod__to_podfile pod_name
-      
-        system "pod install"
-      else
-        puts "The pod '#{pod_name}' already exists in Podfile"
-      end
+      LaneKit.add_pod_to_podfile('UrbanAirship-iOS-SDK')
     end
       
     no_commands do
-
-      def add_pod__to_podfile(pod_name)
-        open(@podfile_path, 'a') do |file|
-          file.puts "pod '#{pod_name}'"
-        end
-      end
 
       def initialize_provider
         @providers_folder = "Classes/Controllers"

@@ -6,6 +6,17 @@ class LaneKit::Generate < Thor
   def self.source_root
     File.dirname('./')
   end
+  
+  desc "pod POD_NAME", "Adds a CocoaPods pod to the Podfile"
+  def pod(pod_name)
+    validate_message = LaneKit.validate_pod_name(pod_name)
+    if validate_message
+      puts "***error: #{validate_message}"
+      return
+    end
+    
+    LaneKit.add_pod_to_podfile(pod_name)
+  end
 
   no_tasks do
     def source_paths

@@ -15,6 +15,25 @@ module LaneKit
     [@template_folder]
   end
 
+  # Adds a pod file line to a CocoaPods Podfile
+  def self.add_pod_to_podfile(pod_name)
+    podfile_path = File.expand_path('Podfile')
+    if !File.exists?(podfile_path)
+      puts "Can't find Podfile #{podfile_path}"
+      return
+    end
+
+    if !self.does_text_exist_in_file?(podfile_path, pod_name)
+      open(podfile_path, 'a') do |file|
+        file.puts "pod '#{pod_name}'"
+      end
+    
+      system "pod install"
+    else
+      puts "The pod '#{pod_name}' already exists in Podfile"
+    end
+  end
+
   # Returns an app name from a folder path. App names are lower case
   # "Tracker" => "tracker", "~/Projects/Runner" => "runner"
   def self.derive_app_name(app_path)
@@ -122,6 +141,15 @@ module LaneKit
       return "app name must be at least two characters long"
     elsif app_name.include? " "
       return "app name cannot include spaces"
+    end
+    return nil
+  end
+  
+  def self.validate_pod_name(pod_name)
+    if pod_name.length < 2
+      return "pod name must be at least two characters long"
+    elsif pod_name.include? " "
+      return "pod name cannot include spaces"
     end
     return nil
   end
