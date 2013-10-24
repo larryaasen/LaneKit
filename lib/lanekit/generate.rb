@@ -9,6 +9,7 @@ class LaneKit::Generate < Thor
   
   desc "pod POD_NAME", "Adds a CocoaPods pod to the Podfile"
   def pod(pod_name)
+    pod_name = pod_name.strip
     validate_message = LaneKit.validate_pod_name(pod_name)
     if validate_message
       puts "***error: #{validate_message}"
