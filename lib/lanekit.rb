@@ -34,10 +34,10 @@ module LaneKit
     end
   end
 
-  # Returns an app name from a folder path. App names are lower case
-  # "Tracker" => "tracker", "~/Projects/Runner" => "runner"
+  # Returns an app name from a folder path.
+  # "Tracker" => "Tracker", "~/Projects/Runner" => "Runner"
   def self.derive_app_name(app_path)
-    app_name = File.basename(app_path).to_s.downcase
+    app_name = File.basename(app_path).to_s
   end
 
   # Model names are lower case
