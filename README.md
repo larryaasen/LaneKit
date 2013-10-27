@@ -1,5 +1,7 @@
 ## LaneKit
 
+[![Gem Version](https://badge.fury.io/rb/lanekit.png)](http://badge.fury.io/rb/lanekit)
+
 LaneKit is an iOS Objective-C code generator for integration with [RestKit](https://github.com/RestKit/RestKit). It generates
 models, resource providers, and full iOS apps with mimimal effort. There is support for unit testing with SenTestingKit
 including fixtures and tests. LaneKit is a command line app written in Ruby and packaged as a Ruby Gem.
