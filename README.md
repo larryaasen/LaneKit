@@ -1,6 +1,6 @@
 ## LaneKit
 
-LaneKit is an iOS Objective-C code generator for integration with RestKit. It generates
+LaneKit is an iOS Objective-C code generator for integration with [RestKit](https://github.com/RestKit/RestKit). It generates
 models, resource providers, and full iOS apps with mimimal effort. There is support for unit testing with SenTestingKit
 including fixtures and tests. LaneKit is a command line app written in Ruby and packaged as a Ruby Gem.
 
@@ -13,7 +13,7 @@ including fixtures and tests. LaneKit is a command line app written in Ruby and 
 * consistent Objective-C code
 * unit tests
 * test fixtures in JSON and Objective-C
-* iOS app creation fully integrated with CocoaPods and RestKit
+* iOS app creation fully integrated with [CocoaPods](https://github.com/CocoaPods/CocoaPods) and RestKit, and .gitignore file
 * tested code
 * rapid development
 * enhanced productivity of junior developers
@@ -217,6 +217,66 @@ and here is a unit test that was generated in Models/VideoTest.m by LaneKit:
 ### Create a new iOS app fully integrated with CocoaPods and RestKit.
 
     $ lanekit new SportsFrames
+    create  SportsFrames
+    create  SportsFrames/Podfile
+    create  SportsFrames/lanekit-ios-project.xcworkspace/contents.xcworkspacedata
+    create  SportsFrames/lanekit-ios-project.xcworkspace/xcshareddata/lanekit-ios-project.xccheckout
+    create  SportsFrames/lanekit-ios-project.xcworkspace/xcuserdata/larry.xcuserdatad/UserInterfaceState.xcuserstate
+    create  SportsFrames/lanekit-ios-project/lanekit-ios-project.xcodeproj/project.pbxproj
+    create  SportsFrames/lanekit-ios-project/lanekit-ios-project.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+    create  SportsFrames/lanekit-ios-project/lanekit-ios-project.xcodeproj/xcuserdata/larry.xcuserdatad/xcschemes/lanekit-ios-project.xcscheme
+    create  SportsFrames/lanekit-ios-project/lanekit-ios-project.xcodeproj/xcuserdata/larry.xcuserdatad/xcschemes/xcschememanagement.plist
+    create  SportsFrames/lanekit-ios-project/lanekit-ios-project/Controllers/LKAppDelegate.h
+    create  SportsFrames/lanekit-ios-project/lanekit-ios-project/Controllers/LKAppDelegate.m
+    create  SportsFrames/lanekit-ios-project/lanekit-ios-project/Controllers/LKDetailViewController.h
+    create  SportsFrames/lanekit-ios-project/lanekit-ios-project/Controllers/LKDetailViewController.m
+    create  SportsFrames/lanekit-ios-project/lanekit-ios-project/Controllers/LKMasterViewController.h
+    create  SportsFrames/lanekit-ios-project/lanekit-ios-project/Controllers/LKMasterViewController.m
+    create  SportsFrames/lanekit-ios-project/lanekit-ios-project/Resources/Base.lproj/Main_iPad.storyboard
+    create  SportsFrames/lanekit-ios-project/lanekit-ios-project/Resources/Base.lproj/Main_iPhone.storyboard
+    create  SportsFrames/lanekit-ios-project/lanekit-ios-project/Resources/Images.xcassets/AppIcon.appiconset/Contents.json
+    create  SportsFrames/lanekit-ios-project/lanekit-ios-project/Resources/Images.xcassets/LaunchImage.launchimage/Contents.json
+    create  SportsFrames/lanekit-ios-project/lanekit-ios-project/Resources/en.lproj/InfoPlist.strings
+    create  SportsFrames/lanekit-ios-project/lanekit-ios-project/Supporting Files/lanekit-ios-project-Info.plist
+    create  SportsFrames/lanekit-ios-project/lanekit-ios-project/Supporting Files/lanekit-ios-project-Prefix.pch
+    create  SportsFrames/lanekit-ios-project/lanekit-ios-project/Supporting Files/main.m
+    create  SportsFrames/lanekit-ios-project/lanekit-ios-projectTests/en.lproj/InfoPlist.strings
+    create  SportsFrames/lanekit-ios-project/lanekit-ios-projectTests/lanekit-ios-projectTests-Info.plist
+    create  SportsFrames/lanekit-ios-project/lanekit-ios-projectTests/lanekit-ios-projectTests.m
+    create  SportsFrames/.gitignore
+    rename  /Users/larry/Projects/lanekit/SportsFrames/SportsFrames
+    rename  /Users/larry/Projects/lanekit/SportsFrames/SportsFrames/SportsFrames
+    rename  /Users/larry/Projects/lanekit/SportsFrames/SportsFrames/SportsFrames/Supporting Files/SportsFrames-Info.plist
+    rename  /Users/larry/Projects/lanekit/SportsFrames/SportsFrames/SportsFrames/Supporting Files/SportsFrames-Prefix.pch
+    rename  /Users/larry/Projects/lanekit/SportsFrames/SportsFrames/SportsFrames.xcodeproj
+    update  /Users/larry/Projects/lanekit/SportsFrames/SportsFrames/SportsFrames.xcodeproj/project.pbxproj
+    update  /Users/larry/Projects/lanekit/SportsFrames/SportsFrames/SportsFrames.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+    rename  /Users/larry/Projects/lanekit/SportsFrames/SportsFrames/SportsFrames.xcodeproj/xcuserdata/larry.xcuserdatad/xcschemes/SportsFrames.xcscheme
+    update  /Users/larry/Projects/lanekit/SportsFrames/SportsFrames/SportsFrames.xcodeproj/xcuserdata/larry.xcuserdatad/xcschemes/SportsFrames.xcscheme
+    update  /Users/larry/Projects/lanekit/SportsFrames/SportsFrames/SportsFrames.xcodeproj/xcuserdata/larry.xcuserdatad/xcschemes/xcschememanagement.plist
+    rename  /Users/larry/Projects/lanekit/SportsFrames/SportsFrames/SportsFramesTests
+    rename  /Users/larry/Projects/lanekit/SportsFrames/SportsFrames/SportsFramesTests/SportsFramesTests-Info.plist
+    rename  /Users/larry/Projects/lanekit/SportsFrames/SportsFrames/SportsFramesTests/SportsFramesTests.m
+    rename  /Users/larry/Projects/lanekit/SportsFrames/SportsFrames.xcworkspace
+    update  /Users/larry/Projects/lanekit/SportsFrames/SportsFrames.xcworkspace/contents.xcworkspacedata
+    rename  /Users/larry/Projects/lanekit/SportsFrames/SportsFrames.xcworkspace/xcshareddata/SportsFrames.xccheckout
+    update  /Users/larry/Projects/lanekit/SportsFrames/SportsFrames.xcworkspace/xcshareddata/SportsFrames.xccheckout
+    update  /Users/larry/Projects/lanekit/SportsFrames/Podfile
+    Installing CocoaPods for RestKit
+    [in /Users/larry/Projects/lanekit/SportsFrames]
+    Analyzing dependencies
+    Downloading dependencies
+    Installing AFNetworking (1.3.3)
+    Installing RestKit (0.20.3)
+    Installing SOCKit (1.1)
+    Installing TransitionKit (1.1.1)
+    Generating Pods project
+    Integrating client project
+    clean  /Users/larry/Projects/lanekit/SportsFrames/SportsFrames.xcworkspace
+
+### Add the [Urban Airship](https://github.com/urbanairship/ios-library) CocoaPods Pod to the project.
+
+    $ lanekit generate pod UrbanAirship-iOS-SDK
 
 ### Sample App
 The SportsFrames app is a fully functional sample app using RestKit created to demonstrate the use of LaneKit in a real world app. It
