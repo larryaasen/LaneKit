@@ -19,6 +19,10 @@
 		461263DE180B401300771CF8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461263C6180B401300771CF8 /* UIKit.framework */; };
 		461263E6180B401300771CF8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 461263E4180B401300771CF8 /* InfoPlist.strings */; };
 		461263E8180B401300771CF8 /* lanekit-ios-projectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 461263E7180B401300771CF8 /* lanekit-ios-projectTests.m */; };
+		466CCC20181CA7010028AD47 /* LKDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 466CCC1D181CA7010028AD47 /* LKDetailViewController.m */; };
+		466CCC21181CA7010028AD47 /* LKMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 466CCC1F181CA7010028AD47 /* LKMasterViewController.m */; };
+		466CCC26181CA7CA0028AD47 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 466CCC22181CA7CA0028AD47 /* Main_iPad.storyboard */; };
+		466CCC27181CA7CA0028AD47 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 466CCC24181CA7CA0028AD47 /* Main_iPhone.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,18 +40,24 @@
 		461263C2180B401300771CF8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		461263C4180B401300771CF8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		461263C6180B401300771CF8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		461263CA180B401300771CF8 /* lanekit-ios-project-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "lanekit-ios-project-Info.plist"; sourceTree = "<group>"; };
+		461263CA180B401300771CF8 /* lanekit-ios-project-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "lanekit-ios-project-Info.plist"; path = "Supporting Files/lanekit-ios-project-Info.plist"; sourceTree = "<group>"; };
 		461263CC180B401300771CF8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		461263CE180B401300771CF8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		461263D0180B401300771CF8 /* lanekit-ios-project-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "lanekit-ios-project-Prefix.pch"; sourceTree = "<group>"; };
-		461263D1180B401300771CF8 /* LKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKAppDelegate.h; sourceTree = "<group>"; };
-		461263D2180B401300771CF8 /* LKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKAppDelegate.m; sourceTree = "<group>"; };
-		461263D4180B401300771CF8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		461263CE180B401300771CF8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Supporting Files/main.m"; sourceTree = "<group>"; };
+		461263D0180B401300771CF8 /* lanekit-ios-project-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "lanekit-ios-project-Prefix.pch"; path = "Supporting Files/lanekit-ios-project-Prefix.pch"; sourceTree = "<group>"; };
+		461263D1180B401300771CF8 /* LKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LKAppDelegate.h; path = Controllers/LKAppDelegate.h; sourceTree = "<group>"; };
+		461263D2180B401300771CF8 /* LKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LKAppDelegate.m; path = Controllers/LKAppDelegate.m; sourceTree = "<group>"; };
+		461263D4180B401300771CF8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Resources/Images.xcassets; sourceTree = "<group>"; };
 		461263DA180B401300771CF8 /* lanekit-ios-projectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "lanekit-ios-projectTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		461263DB180B401300771CF8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		461263E3180B401300771CF8 /* lanekit-ios-projectTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "lanekit-ios-projectTests-Info.plist"; sourceTree = "<group>"; };
 		461263E5180B401300771CF8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		461263E7180B401300771CF8 /* lanekit-ios-projectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = lanekit-ios-projectTests.m; sourceTree = "<group>"; };
+		461263E7180B401300771CF8 /* lanekit-ios-projectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "lanekit-ios-projectTests.m"; sourceTree = "<group>"; };
+		466CCC1C181CA7010028AD47 /* LKDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LKDetailViewController.h; path = Controllers/LKDetailViewController.h; sourceTree = "<group>"; };
+		466CCC1D181CA7010028AD47 /* LKDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LKDetailViewController.m; path = Controllers/LKDetailViewController.m; sourceTree = "<group>"; };
+		466CCC1E181CA7010028AD47 /* LKMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LKMasterViewController.h; path = Controllers/LKMasterViewController.h; sourceTree = "<group>"; };
+		466CCC1F181CA7010028AD47 /* LKMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LKMasterViewController.m; path = Controllers/LKMasterViewController.m; sourceTree = "<group>"; };
+		466CCC23181CA7CA0028AD47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Resources/Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		466CCC25181CA7CA0028AD47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Resources/Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,10 +117,11 @@
 		461263C8180B401300771CF8 /* lanekit-ios-project */ = {
 			isa = PBXGroup;
 			children = (
-				461263D1180B401300771CF8 /* LKAppDelegate.h */,
-				461263D2180B401300771CF8 /* LKAppDelegate.m */,
-				461263D4180B401300771CF8 /* Images.xcassets */,
+				466CCB7A18192CDC0028AD47 /* Controllers */,
+				466CCB7918192CD50028AD47 /* Models */,
+				466CCB7C18192CF30028AD47 /* Resources */,
 				461263C9180B401300771CF8 /* Supporting Files */,
+				466CCB7B18192CE30028AD47 /* Views */,
 			);
 			path = "lanekit-ios-project";
 			sourceTree = "<group>";
@@ -142,6 +153,43 @@
 				461263E4180B401300771CF8 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		466CCB7918192CD50028AD47 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		466CCB7A18192CDC0028AD47 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				461263D1180B401300771CF8 /* LKAppDelegate.h */,
+				461263D2180B401300771CF8 /* LKAppDelegate.m */,
+				466CCC1C181CA7010028AD47 /* LKDetailViewController.h */,
+				466CCC1D181CA7010028AD47 /* LKDetailViewController.m */,
+				466CCC1E181CA7010028AD47 /* LKMasterViewController.h */,
+				466CCC1F181CA7010028AD47 /* LKMasterViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		466CCB7B18192CE30028AD47 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		466CCB7C18192CF30028AD47 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				466CCC22181CA7CA0028AD47 /* Main_iPad.storyboard */,
+				466CCC24181CA7CA0028AD47 /* Main_iPhone.storyboard */,
+				461263D4180B401300771CF8 /* Images.xcassets */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +251,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 461263B6180B401300771CF8;
 			productRefGroup = 461263C0180B401300771CF8 /* Products */;
@@ -220,6 +269,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				466CCC27181CA7CA0028AD47 /* Main_iPhone.storyboard in Resources */,
+				466CCC26181CA7CA0028AD47 /* Main_iPad.storyboard in Resources */,
 				461263CD180B401300771CF8 /* InfoPlist.strings in Resources */,
 				461263D5180B401300771CF8 /* Images.xcassets in Resources */,
 			);
@@ -240,6 +291,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				466CCC20181CA7010028AD47 /* LKDetailViewController.m in Sources */,
+				466CCC21181CA7010028AD47 /* LKMasterViewController.m in Sources */,
 				461263CF180B401300771CF8 /* main.m in Sources */,
 				461263D3180B401300771CF8 /* LKAppDelegate.m in Sources */,
 			);
@@ -270,6 +323,7 @@
 				461263CC180B401300771CF8 /* en */,
 			);
 			name = InfoPlist.strings;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		461263E4180B401300771CF8 /* InfoPlist.strings */ = {
@@ -278,6 +332,22 @@
 				461263E5180B401300771CF8 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		466CCC22181CA7CA0028AD47 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				466CCC23181CA7CA0028AD47 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		466CCC24181CA7CA0028AD47 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				466CCC25181CA7CA0028AD47 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -363,8 +433,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "lanekit-ios-project/lanekit-ios-project-Prefix.pch";
-				INFOPLIST_FILE = "lanekit-ios-project/lanekit-ios-project-Info.plist";
+				GCC_PREFIX_HEADER = "lanekit-ios-project/Supporting Files/lanekit-ios-project-Prefix.pch";
+				INFOPLIST_FILE = "lanekit-ios-project/Supporting Files/lanekit-ios-project-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -376,8 +446,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "lanekit-ios-project/lanekit-ios-project-Prefix.pch";
-				INFOPLIST_FILE = "lanekit-ios-project/lanekit-ios-project-Info.plist";
+				GCC_PREFIX_HEADER = "lanekit-ios-project/Supporting Files/lanekit-ios-project-Prefix.pch";
+				INFOPLIST_FILE = "lanekit-ios-project/Supporting Files/lanekit-ios-project-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -444,6 +514,7 @@
 				461263ED180B401300771CF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		461263EE180B401300771CF8 /* Build configuration list for PBXNativeTarget "lanekit-ios-projectTests" */ = {
 			isa = XCConfigurationList;
@@ -452,6 +523,7 @@
 				461263F0180B401300771CF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

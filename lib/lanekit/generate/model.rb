@@ -46,7 +46,6 @@ module LaneKit
         self.initialize_model
         self.create_model_folders
         self.create_model_files
-        self.update_xcode_project
       end
       
       no_tasks {
