@@ -1,3 +1,9 @@
+LaneKit 0.3.5, Nov 2, 2013:
+-created a Lanefile that is used after a new project is generated to locate the main project and testing target.
+-model files are now added to the Xcode project in the 'generate model' command.
+-provider files are now added to the Xcode project in the 'generate provider' command.
+-fixed various issues related to unit testing.
+
 LaneKit 0.3.4, Oct 26, 2013:
 -the 'generate new' command now has .gitignore file.
 -restructured and improved the template project for the 'generate new' command.
