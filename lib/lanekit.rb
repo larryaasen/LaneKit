@@ -234,6 +234,13 @@ module LaneKit
     end
   end
 
+  def self.controllers_folder(lanefile)
+    "#{lanefile.app_project_name}/#{lanefile.app_project_name}/Controllers"
+  end
+
+  def self.controllers_group(lanefile)
+    "#{lanefile.app_project_name}/Controllers"
+  end
 end
 
 module LaneKit

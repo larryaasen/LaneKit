@@ -46,9 +46,9 @@ module LaneKit
         @provider_base_file_name = "LKResourceProvider"
   
         @provider_file_name = @provider_name
-        
-        @providers_folder  = "#{@lanefile.app_project_name}/#{@lanefile.app_project_name}/Controllers"
-        @controllers_group = "#{@lanefile.app_project_name}/Controllers"
+
+        @providers_folder = LaneKit.controllers_folder(@lanefile)
+        @controllers_group = LaneKit.controllers_group(@lanefile)
       end
 
       def create_provider_folders
