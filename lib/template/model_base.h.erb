@@ -20,4 +20,6 @@
 <% if @using_core_data %>
 + (NSString *)entityName;
 + (<%=@class_name%> *)create:(NSManagedObjectContext *)moc;<% end %>
+
+- (NSString *)descriptionForDisplay;
 @end

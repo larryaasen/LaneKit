@@ -47,4 +47,12 @@
 <% end %><% end %>    return mapping;
 }<% end %>
 
+#pragma mark LKModel overrides
+
+- (NSString *)descriptionForDisplay
+{<% if @first_string_attribute %>
+  return [NSString stringWithFormat:@"%@", self.<%=@first_string_attribute%>];<% else %>
+  return [self description];<% end %>
+}
+
 @end

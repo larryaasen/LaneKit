@@ -22,6 +22,7 @@ module LaneKit
         
         @attributes = []
         @any_relationships = false
+        @first_string_attribute = nil
         
         attributes.each {|attribute|
           name, type, relationship = attribute.split(":")
@@ -37,6 +38,7 @@ module LaneKit
             :unit_test_assert => LaneKit.objective_c_type_unit_test_assert(@model_name, name, type)
           }
           @any_relationships = relationship ? true : @any_relationships
+          @first_string_attribute = name if !@first_string_attribute && type == 'string'
         }
         
         @lanefile = LaneKit::Lanefile.new
