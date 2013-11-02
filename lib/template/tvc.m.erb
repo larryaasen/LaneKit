@@ -36,7 +36,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+    [self.tableView registerClass:[<%=@register_class%> class] forCellReuseIdentifier:@"Cell"];
 
     UIRefreshControl *refreshControl = UIRefreshControl.new;
     [refreshControl addTarget:self action:@selector(refreshProvider) forControlEvents:UIControlEventValueChanged];
