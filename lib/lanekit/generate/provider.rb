@@ -24,6 +24,14 @@ module LaneKit
       @model_file_name = LaneKit.derive_file_name(@model_name)
       @provider_url = url
 
+      @lanefile = LaneKit::Lanefile.new
+      lanefile_error = LaneKit.validate_lanefile(@lanefile)
+      if lanefile_error
+        say lanefile_error, :red
+        return
+      end
+      @app_project_path = @lanefile.app_project_path
+
       self.initialize_provider
       self.create_provider_folders
       self.create_provider_files
@@ -32,14 +40,15 @@ module LaneKit
     no_commands do
 
       def initialize_provider
-        @providers_folder = "Classes/Controllers"
-          
         # Resource Provider Base Class
         @provider_base_name = "LKResourceProvider"
         @provider_base_class_name = "LKResourceProvider"
         @provider_base_file_name = "LKResourceProvider"
   
         @provider_file_name = @provider_name
+        
+        @providers_folder  = "#{@lanefile.app_project_name}/#{@lanefile.app_project_name}/Controllers"
+        @controllers_group = "#{@lanefile.app_project_name}/Controllers"
       end
 
       def create_provider_folders
@@ -50,24 +59,36 @@ module LaneKit
         # 1) Create the base resource provider
         # Create the .h file
         source = "provider_base.h.erb"
-        target = File.join(@providers_folder, "#{@provider_base_file_name}.h")
+        target_file = "#{@provider_base_file_name}.h"
+        target = File.join(@providers_folder, target_file)
         template(source, target, @@template_opts)
+
+        LaneKit.add_file_to_project("Controllers/"+target_file, @controllers_group, @app_project_path)
   
         # Create the .m file
         source = "provider_base.m.erb"
-        target = File.join(@providers_folder, "#{@provider_base_file_name}.m")
+        target_file = "#{@provider_base_file_name}.m"
+        target = File.join(@providers_folder, target_file)
         template(source, target, @@template_opts)
+
+        LaneKit.add_file_to_project("Controllers/"+target_file, @controllers_group, @app_project_path, "@all")
 
         # 2) Create the resource provider
         # Create the .h file
         source = "provider.h.erb"
-        target = File.join(@providers_folder, "#{@provider_file_name}.h")
+        target_file = "#{@provider_file_name}.h"
+        target = File.join(@providers_folder, target_file)
         template(source, target, @@template_opts)
+
+        LaneKit.add_file_to_project("Controllers/"+target_file, @controllers_group, @app_project_path)
   
         # Create the .m file
         source = "provider.m.erb"
-        target = File.join(@providers_folder, "#{@provider_file_name}.m")
+        target_file = "#{@provider_file_name}.m"
+        target = File.join(@providers_folder, target_file)
         template(source, target, @@template_opts)
+
+        LaneKit.add_file_to_project("Controllers/"+target_file, @controllers_group, @app_project_path, "@all")
       end
     end
   end

@@ -1,5 +1,3 @@
-require 'lanekit/lanefile'
-
 module LaneKit
   class Generate < Thor
     
@@ -41,11 +39,13 @@ module LaneKit
           @any_relationships = relationship ? true : @any_relationships
         }
         
-        lanefile_error = self.validate_lanefile
+        @lanefile = LaneKit::Lanefile.new
+        lanefile_error = LaneKit.validate_lanefile(@lanefile)
         if lanefile_error
           say lanefile_error, :red
           return
         end
+        @app_project_path = @lanefile.app_project_path
 
         self.initialize_model
         self.create_model_folders
@@ -53,30 +53,6 @@ module LaneKit
       end
       
       no_tasks {
-        def validate_lanefile
-          @lanefile = LaneKit::Lanefile.new
-          if !@lanefile.exists?
-            return "Error: Cannot find 'Lanefile' in the current folder. Is this a LaneKit generated app folder?"
-          end
-
-          @app_project_path = @lanefile.app_project_path
-          if !File.exists?(@app_project_path)
-            return "Lanefile Error: cannot find project: #{self.app_project_path}"
-          end
-
-          if !@lanefile.app_project_name || !@lanefile.app_project_name.length
-            return "Lanefile Error: missing app_project_name"
-          end
-
-          if !@lanefile.app_target_name || !@lanefile.app_target_name.length
-            return "Lanefile Error: missing app_target_name"
-          end
-
-          if !@lanefile.app_target_tests_name || !@lanefile.app_target_tests_name.length
-            return "Lanefile Error: missing app_target_tests_name"
-          end
-        end
-
         def initialize_model
           # Model Base Class
           @model_base_name = "LKModel"

@@ -4,6 +4,7 @@ require 'xcodeproj'
 require 'active_support'
 require 'active_support/inflector'
 require 'lanekit/version'
+require 'lanekit/lanefile'
 
 module LaneKit
   @@objc_types = {
@@ -46,8 +47,7 @@ module LaneKit
      
     # Save the project file
     project.save
-  end
-  
+  end  
 
   # Adds a pod file line to a CocoaPods Podfile
   def self.add_pod_to_podfile(pod_name)
@@ -198,12 +198,35 @@ module LaneKit
   end
   
   def self.gem_available?(gemname)
-  if Gem::Specification.methods.include?(:find_all_by_name) 
-    not Gem::Specification.find_all_by_name(gemname).empty?
-   else
-     Gem.available?(gemname)
-   end
- end
+    if Gem::Specification.methods.include?(:find_all_by_name) 
+       not Gem::Specification.find_all_by_name(gemname).empty?
+     else
+       Gem.available?(gemname)
+     end
+  end
+
+  def self.validate_lanefile(lanefile)
+    if !lanefile.exists?
+      return "Error: Cannot find 'Lanefile' in the current folder. Is this a LaneKit generated app folder?"
+    end
+  
+    app_project_path = lanefile.app_project_path
+    if !File.exists?(app_project_path)
+      return "Lanefile Error: cannot find project: #{app_project_path}"
+    end
+  
+    if !lanefile.app_project_name || !lanefile.app_project_name.length
+      return "Lanefile Error: missing app_project_name"
+    end
+  
+    if !lanefile.app_target_name || !lanefile.app_target_name.length
+      return "Lanefile Error: missing app_target_name"
+    end
+  
+    if !lanefile.app_target_tests_name || !lanefile.app_target_tests_name.length
+      return "Lanefile Error: missing app_target_tests_name"
+    end
+  end
 
 end
 
