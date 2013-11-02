@@ -8,12 +8,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  // Override point for customization after application launch.
-  if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-    UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
-    UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
-    splitViewController.delegate = (id)navigationController.topViewController;
-  }
+  UIViewController *controller = UIViewController.new;
+  [(UINavigationController *)self.window.rootViewController pushViewController:controller animated:NO];
+  controller.navigationItem.title = @"lanekit-ios-project";
+
   return YES;
 }
 

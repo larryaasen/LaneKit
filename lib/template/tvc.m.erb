@@ -9,7 +9,8 @@
 
 #import "<%=@controller_file_name%>.h"
 #import "<%=@provider_file_name%>.h"
-
+<%if @register_class != "UITableViewCell" %>#import "<%=@register_class%>.h"
+<%end%>
 @interface <%=@controller_class_name%> ()
 @property (nonatomic,strong) NSArray *<%=@model_name%>;
 - (void)refreshProvider;
@@ -37,7 +38,10 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
     [self.tableView registerClass:[<%=@register_class%> class] forCellReuseIdentifier:@"Cell"];
-
+<%if @register_class != "UITableViewCell" %>
+    self.tableView.rowHeight = <%=@register_class%>.cellHeight;
+    self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
+<%end%>
     UIRefreshControl *refreshControl = UIRefreshControl.new;
     [refreshControl addTarget:self action:@selector(refreshProvider) forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refreshControl;
@@ -85,9 +89,18 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    id item = [self.<%=@model_name%> objectAtIndex:indexPath.row];
-    cell.textLabel.text = [item description];
+    LKModel *model = [self.<%=@model_name%> objectAtIndex:indexPath.row];
+    cell.textLabel.text = [model descriptionForDisplay];
     
+    if ([model respondsToSelector:@selector(image)] && [cell respondsToSelector:@selector(imageView)])
+    {
+        NSString *imageURL = (NSString *)[(id)model image];
+        if ([imageURL isKindOfClass:[NSString class]])
+        {
+            [cell.imageView setImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:[UIImage imageNamed:@"placeholder"]];
+        }
+    }
+
     return cell;
 }
 

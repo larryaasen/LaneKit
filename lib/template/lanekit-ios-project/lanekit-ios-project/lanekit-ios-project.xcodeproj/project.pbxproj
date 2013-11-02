@@ -14,10 +14,9 @@
 		461263CF180B401300771CF8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 461263CE180B401300771CF8 /* main.m */; };
 		461263D3180B401300771CF8 /* LKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 461263D2180B401300771CF8 /* LKAppDelegate.m */; };
 		461263D5180B401300771CF8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 461263D4180B401300771CF8 /* Images.xcassets */; };
-		466CCC20181CA7010028AD47 /* LKDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 466CCC1D181CA7010028AD47 /* LKDetailViewController.m */; };
-		466CCC21181CA7010028AD47 /* LKMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 466CCC1F181CA7010028AD47 /* LKMasterViewController.m */; };
 		466CCC26181CA7CA0028AD47 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 466CCC22181CA7CA0028AD47 /* Main_iPad.storyboard */; };
 		466CCC27181CA7CA0028AD47 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 466CCC24181CA7CA0028AD47 /* Main_iPhone.storyboard */; };
+		46B91530182595FA00DC8651 /* placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46B9152F182595FA00DC8651 /* placeholder@2x.png */; };
 		46C411901824966400B19AB2 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4688500518248B3600EDAAA8 /* SenTestingKit.framework */; };
 		46C411911824966400B19AB2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461263C2180B401300771CF8 /* Foundation.framework */; };
 		46C411921824966400B19AB2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461263C6180B401300771CF8 /* UIKit.framework */; };
@@ -49,13 +48,10 @@
 		461263D4180B401300771CF8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Resources/Images.xcassets; sourceTree = "<group>"; };
 		461263E3180B401300771CF8 /* lanekit-ios-projectTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "lanekit-ios-projectTests-Info.plist"; sourceTree = "<group>"; };
 		461263E5180B401300771CF8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		466CCC1C181CA7010028AD47 /* LKDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LKDetailViewController.h; path = Controllers/LKDetailViewController.h; sourceTree = "<group>"; };
-		466CCC1D181CA7010028AD47 /* LKDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LKDetailViewController.m; path = Controllers/LKDetailViewController.m; sourceTree = "<group>"; };
-		466CCC1E181CA7010028AD47 /* LKMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LKMasterViewController.h; path = Controllers/LKMasterViewController.h; sourceTree = "<group>"; };
-		466CCC1F181CA7010028AD47 /* LKMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LKMasterViewController.m; path = Controllers/LKMasterViewController.m; sourceTree = "<group>"; };
 		466CCC23181CA7CA0028AD47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Resources/Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		466CCC25181CA7CA0028AD47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Resources/Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		4688500518248B3600EDAAA8 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		46B9152F182595FA00DC8651 /* placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "placeholder@2x.png"; path = "Resources/placeholder@2x.png"; sourceTree = "<group>"; };
 		46C4118F1824966400B19AB2 /* lanekit-ios-projectTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "lanekit-ios-projectTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46C411A41824995C00B19AB2 /* lanekit-ios-projectTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "lanekit-ios-projectTests.m"; sourceTree = "<group>"; };
 		46C411A618249A9600B19AB2 /* lanekit-ios-projectTests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "lanekit-ios-projectTests-Prefix.pch"; sourceTree = "<group>"; };
@@ -193,10 +189,6 @@
 			children = (
 				461263D1180B401300771CF8 /* LKAppDelegate.h */,
 				461263D2180B401300771CF8 /* LKAppDelegate.m */,
-				466CCC1C181CA7010028AD47 /* LKDetailViewController.h */,
-				466CCC1D181CA7010028AD47 /* LKDetailViewController.m */,
-				466CCC1E181CA7010028AD47 /* LKMasterViewController.h */,
-				466CCC1F181CA7010028AD47 /* LKMasterViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -214,6 +206,7 @@
 				466CCC22181CA7CA0028AD47 /* Main_iPad.storyboard */,
 				466CCC24181CA7CA0028AD47 /* Main_iPhone.storyboard */,
 				461263D4180B401300771CF8 /* Images.xcassets */,
+				46B9152F182595FA00DC8651 /* placeholder@2x.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -295,6 +288,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46B91530182595FA00DC8651 /* placeholder@2x.png in Resources */,
 				466CCC27181CA7CA0028AD47 /* Main_iPhone.storyboard in Resources */,
 				466CCC26181CA7CA0028AD47 /* Main_iPad.storyboard in Resources */,
 				461263CD180B401300771CF8 /* InfoPlist.strings in Resources */,
@@ -317,8 +311,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				466CCC20181CA7010028AD47 /* LKDetailViewController.m in Sources */,
-				466CCC21181CA7010028AD47 /* LKMasterViewController.m in Sources */,
 				461263CF180B401300771CF8 /* main.m in Sources */,
 				461263D3180B401300771CF8 /* LKAppDelegate.m in Sources */,
 			);
