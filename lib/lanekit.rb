@@ -25,9 +25,15 @@ module LaneKit
     #puts "group_name: #{group_name}"
     #puts "groups: #{project.groups}"
     #puts "group: #{project[group_name]}"
+    
+    group = project[group_name]
+    
+    # Avoid duplicates
+    ref = group.find_file_by_path(file_name)
+    return if ref
      
     # Add a file to the project in the main group
-    file = project[group_name].new_reference(file_name)
+    file = group.new_reference(file_name)
 
     if target_name == "@all"
       # Add the file to the main target
