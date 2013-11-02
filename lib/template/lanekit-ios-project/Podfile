@@ -2,4 +2,6 @@ xcodeproj 'lanekit-ios-project/lanekit-ios-project.xcodeproj'
 
 platform :ios, "6.0"
 
+link_with ['lanekit-ios-project', 'lanekit-ios-projectTests'] 
+
 pod 'RestKit', '0.20.3'

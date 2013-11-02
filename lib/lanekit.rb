@@ -14,6 +14,40 @@ module LaneKit
   def self.template_folders
     [@template_folder]
   end
+  
+  # Adds a file to a group in an Xcode project
+  # For example: LaneKit.add_file_to_project('Message.m', 'Models', 'SportsFrames', 'SportsFrames')
+  def self.add_file_to_project(file_name, group_name, project_path, target_name=nil)
+    # Open the existing Xcode project
+    project = Xcodeproj::Project.open(project_path)
+    
+    #puts "group_name: #{group_name}"
+    #puts "groups: #{project.groups}"
+    #puts "group: #{project[group_name]}"
+     
+    # Add a file to the project in the main group
+    file = project[group_name].new_reference(file_name)
+
+    if target_name == "@all"
+      # Add the file to the main target
+      
+      project.targets.each do |target|
+        target.add_file_references([file])
+      end
+    elsif target_name
+      # Add the file to the main target
+      
+      unless target = project.targets.find { |target| target.name == target_name }
+        raise ArgumentError, "Target by name `#{target_name}' not found in the project."
+      end
+      
+      target.add_file_references([file])
+    end
+     
+    # Save the project file
+    project.save
+  end
+  
 
   # Adds a pod file line to a CocoaPods Podfile
   def self.add_pod_to_podfile(pod_name)

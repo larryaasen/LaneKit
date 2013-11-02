@@ -13,7 +13,7 @@ including fixtures and tests. LaneKit is a command line app written in Ruby and 
 * properly implemented models and resource providers
 * easy integration with RestKit
 * consistent Objective-C code
-* unit tests
+* unit tests with OCUnit (SenTestingKit)
 * test fixtures in JSON and Objective-C
 * iOS app creation fully integrated with [CocoaPods](https://github.com/CocoaPods/CocoaPods) and RestKit, and .gitignore file
 * tested code

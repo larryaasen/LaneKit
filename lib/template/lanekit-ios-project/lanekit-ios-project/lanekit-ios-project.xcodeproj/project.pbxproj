@@ -14,19 +14,19 @@
 		461263CF180B401300771CF8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 461263CE180B401300771CF8 /* main.m */; };
 		461263D3180B401300771CF8 /* LKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 461263D2180B401300771CF8 /* LKAppDelegate.m */; };
 		461263D5180B401300771CF8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 461263D4180B401300771CF8 /* Images.xcassets */; };
-		461263DC180B401300771CF8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461263DB180B401300771CF8 /* XCTest.framework */; };
-		461263DD180B401300771CF8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461263C2180B401300771CF8 /* Foundation.framework */; };
-		461263DE180B401300771CF8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461263C6180B401300771CF8 /* UIKit.framework */; };
-		461263E6180B401300771CF8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 461263E4180B401300771CF8 /* InfoPlist.strings */; };
-		461263E8180B401300771CF8 /* lanekit-ios-projectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 461263E7180B401300771CF8 /* lanekit-ios-projectTests.m */; };
 		466CCC20181CA7010028AD47 /* LKDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 466CCC1D181CA7010028AD47 /* LKDetailViewController.m */; };
 		466CCC21181CA7010028AD47 /* LKMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 466CCC1F181CA7010028AD47 /* LKMasterViewController.m */; };
 		466CCC26181CA7CA0028AD47 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 466CCC22181CA7CA0028AD47 /* Main_iPad.storyboard */; };
 		466CCC27181CA7CA0028AD47 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 466CCC24181CA7CA0028AD47 /* Main_iPhone.storyboard */; };
+		46C411901824966400B19AB2 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4688500518248B3600EDAAA8 /* SenTestingKit.framework */; };
+		46C411911824966400B19AB2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461263C2180B401300771CF8 /* Foundation.framework */; };
+		46C411921824966400B19AB2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461263C6180B401300771CF8 /* UIKit.framework */; };
+		46C411A21824977D00B19AB2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 461263E4180B401300771CF8 /* InfoPlist.strings */; };
+		46C411A51824995C00B19AB2 /* lanekit-ios-projectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C411A41824995C00B19AB2 /* lanekit-ios-projectTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		461263DF180B401300771CF8 /* PBXContainerItemProxy */ = {
+		46C4119C1824966400B19AB2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 461263B7180B401300771CF8 /* Project object */;
 			proxyType = 1;
@@ -47,17 +47,18 @@
 		461263D1180B401300771CF8 /* LKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LKAppDelegate.h; path = Controllers/LKAppDelegate.h; sourceTree = "<group>"; };
 		461263D2180B401300771CF8 /* LKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LKAppDelegate.m; path = Controllers/LKAppDelegate.m; sourceTree = "<group>"; };
 		461263D4180B401300771CF8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Resources/Images.xcassets; sourceTree = "<group>"; };
-		461263DA180B401300771CF8 /* lanekit-ios-projectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "lanekit-ios-projectTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		461263DB180B401300771CF8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		461263E3180B401300771CF8 /* lanekit-ios-projectTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "lanekit-ios-projectTests-Info.plist"; sourceTree = "<group>"; };
 		461263E5180B401300771CF8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		461263E7180B401300771CF8 /* lanekit-ios-projectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "lanekit-ios-projectTests.m"; sourceTree = "<group>"; };
 		466CCC1C181CA7010028AD47 /* LKDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LKDetailViewController.h; path = Controllers/LKDetailViewController.h; sourceTree = "<group>"; };
 		466CCC1D181CA7010028AD47 /* LKDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LKDetailViewController.m; path = Controllers/LKDetailViewController.m; sourceTree = "<group>"; };
 		466CCC1E181CA7010028AD47 /* LKMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LKMasterViewController.h; path = Controllers/LKMasterViewController.h; sourceTree = "<group>"; };
 		466CCC1F181CA7010028AD47 /* LKMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LKMasterViewController.m; path = Controllers/LKMasterViewController.m; sourceTree = "<group>"; };
 		466CCC23181CA7CA0028AD47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Resources/Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		466CCC25181CA7CA0028AD47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Resources/Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		4688500518248B3600EDAAA8 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		46C4118F1824966400B19AB2 /* lanekit-ios-projectTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "lanekit-ios-projectTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		46C411A41824995C00B19AB2 /* lanekit-ios-projectTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "lanekit-ios-projectTests.m"; sourceTree = "<group>"; };
+		46C411A618249A9600B19AB2 /* lanekit-ios-projectTests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "lanekit-ios-projectTests-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,13 +72,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		461263D7180B401300771CF8 /* Frameworks */ = {
+		46C4118C1824966400B19AB2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				461263DC180B401300771CF8 /* XCTest.framework in Frameworks */,
-				461263DE180B401300771CF8 /* UIKit.framework in Frameworks */,
-				461263DD180B401300771CF8 /* Foundation.framework in Frameworks */,
+				46C411901824966400B19AB2 /* SenTestingKit.framework in Frameworks */,
+				46C411921824966400B19AB2 /* UIKit.framework in Frameworks */,
+				46C411911824966400B19AB2 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				461263BF180B401300771CF8 /* lanekit-ios-project.app */,
-				461263DA180B401300771CF8 /* lanekit-ios-projectTests.xctest */,
+				46C4118F1824966400B19AB2 /* lanekit-ios-projectTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,7 +110,7 @@
 				461263C2180B401300771CF8 /* Foundation.framework */,
 				461263C4180B401300771CF8 /* CoreGraphics.framework */,
 				461263C6180B401300771CF8 /* UIKit.framework */,
-				461263DB180B401300771CF8 /* XCTest.framework */,
+				4688500518248B3600EDAAA8 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -140,7 +141,10 @@
 		461263E1180B401300771CF8 /* lanekit-ios-projectTests */ = {
 			isa = PBXGroup;
 			children = (
-				461263E7180B401300771CF8 /* lanekit-ios-projectTests.m */,
+				46C411A41824995C00B19AB2 /* lanekit-ios-projectTests.m */,
+				466AEF76181DF3ED00787305 /* Fixtures */,
+				466AEF77181DF3F200787305 /* Models */,
+				466AEF75181DF3D800787305 /* Resources */,
 				461263E2180B401300771CF8 /* Supporting Files */,
 			);
 			path = "lanekit-ios-projectTests";
@@ -149,10 +153,32 @@
 		461263E2180B401300771CF8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				46C411A618249A9600B19AB2 /* lanekit-ios-projectTests-Prefix.pch */,
 				461263E3180B401300771CF8 /* lanekit-ios-projectTests-Info.plist */,
 				461263E4180B401300771CF8 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		466AEF75181DF3D800787305 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		466AEF76181DF3ED00787305 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Fixtures;
+			sourceTree = "<group>";
+		};
+		466AEF77181DF3F200787305 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		466CCB7918192CD50028AD47 /* Models */ = {
@@ -212,23 +238,23 @@
 			productReference = 461263BF180B401300771CF8 /* lanekit-ios-project.app */;
 			productType = "com.apple.product-type.application";
 		};
-		461263D9180B401300771CF8 /* lanekit-ios-projectTests */ = {
+		46C4118E1824966400B19AB2 /* lanekit-ios-projectTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 461263EE180B401300771CF8 /* Build configuration list for PBXNativeTarget "lanekit-ios-projectTests" */;
+			buildConfigurationList = 46C411A01824966400B19AB2 /* Build configuration list for PBXNativeTarget "lanekit-ios-projectTests" */;
 			buildPhases = (
-				461263D6180B401300771CF8 /* Sources */,
-				461263D7180B401300771CF8 /* Frameworks */,
-				461263D8180B401300771CF8 /* Resources */,
+				46C4118B1824966400B19AB2 /* Sources */,
+				46C4118C1824966400B19AB2 /* Frameworks */,
+				46C4118D1824966400B19AB2 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				461263E0180B401300771CF8 /* PBXTargetDependency */,
+				46C4119D1824966400B19AB2 /* PBXTargetDependency */,
 			);
 			name = "lanekit-ios-projectTests";
-			productName = "lanekit-ios-projectTests";
-			productReference = 461263DA180B401300771CF8 /* lanekit-ios-projectTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
+			productName = "lanekit-ios-project Tests";
+			productReference = 46C4118F1824966400B19AB2 /* lanekit-ios-projectTests.octest */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -240,7 +266,7 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = LaneKit;
 				TargetAttributes = {
-					461263D9180B401300771CF8 = {
+					46C4118E1824966400B19AB2 = {
 						TestTargetID = 461263BE180B401300771CF8;
 					};
 				};
@@ -259,7 +285,7 @@
 			projectRoot = "";
 			targets = (
 				461263BE180B401300771CF8 /* lanekit-ios-project */,
-				461263D9180B401300771CF8 /* lanekit-ios-projectTests */,
+				46C4118E1824966400B19AB2 /* lanekit-ios-projectTests */,
 			);
 		};
 /* End PBXProject section */
@@ -276,11 +302,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		461263D8180B401300771CF8 /* Resources */ = {
+		46C4118D1824966400B19AB2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				461263E6180B401300771CF8 /* InfoPlist.strings in Resources */,
+				46C411A21824977D00B19AB2 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,21 +324,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		461263D6180B401300771CF8 /* Sources */ = {
+		46C4118B1824966400B19AB2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				461263E8180B401300771CF8 /* lanekit-ios-projectTests.m in Sources */,
+				46C411A51824995C00B19AB2 /* lanekit-ios-projectTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		461263E0180B401300771CF8 /* PBXTargetDependency */ = {
+		46C4119D1824966400B19AB2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 461263BE180B401300771CF8 /* lanekit-ios-project */;
-			targetProxy = 461263DF180B401300771CF8 /* PBXContainerItemProxy */;
+			targetProxy = 46C4119C1824966400B19AB2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -432,6 +458,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "lanekit-ios-project/Supporting Files/lanekit-ios-project-Prefix.pch";
 				INFOPLIST_FILE = "lanekit-ios-project/Supporting Files/lanekit-ios-project-Info.plist";
@@ -445,6 +475,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "lanekit-ios-project/Supporting Files/lanekit-ios-project-Prefix.pch";
 				INFOPLIST_FILE = "lanekit-ios-project/Supporting Files/lanekit-ios-project-Info.plist";
@@ -453,7 +487,7 @@
 			};
 			name = Release;
 		};
-		461263EF180B401300771CF8 /* Debug */ = {
+		46C4119E1824966400B19AB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
@@ -464,19 +498,20 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "lanekit-ios-project/lanekit-ios-project-Prefix.pch";
+				GCC_PREFIX_HEADER = "lanekit-ios-projectTests/lanekit-ios-projectTests-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "lanekit-ios-projectTests/lanekit-ios-projectTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
+				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
-		461263F0180B401300771CF8 /* Release */ = {
+		46C4119F1824966400B19AB2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
@@ -487,11 +522,12 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "lanekit-ios-project/lanekit-ios-project-Prefix.pch";
+				GCC_PREFIX_HEADER = "lanekit-ios-projectTests/lanekit-ios-projectTests-Prefix.pch";
 				INFOPLIST_FILE = "lanekit-ios-projectTests/lanekit-ios-projectTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
+				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
@@ -516,11 +552,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		461263EE180B401300771CF8 /* Build configuration list for PBXNativeTarget "lanekit-ios-projectTests" */ = {
+		46C411A01824966400B19AB2 /* Build configuration list for PBXNativeTarget "lanekit-ios-projectTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				461263EF180B401300771CF8 /* Debug */,
-				461263F0180B401300771CF8 /* Release */,
+				46C4119E1824966400B19AB2 /* Debug */,
+				46C4119F1824966400B19AB2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
