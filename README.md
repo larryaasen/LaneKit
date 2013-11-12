@@ -3,14 +3,14 @@
 [![Gem Version](https://badge.fury.io/rb/lanekit.png)](http://badge.fury.io/rb/lanekit)
 
 LaneKit is an iOS Objective-C code generator for integration with [RestKit](https://github.com/RestKit/RestKit). It generates
-models, resource providers, and full iOS apps with mimimal effort. There is support for unit testing with SenTestingKit
+models, resource providers, table views, and full iOS apps with mimimal effort. There is support for unit testing with SenTestingKit
 including fixtures and tests. LaneKit is a command line app written in Ruby and packaged as a Ruby Gem.
 
 - [Source code for LaneKit](https://github.com/LarryAasen/LaneKit/zipball/master) from [GitHub](http://github.com).
 - Questions? [Stack Overflow](http://stackoverflow.com/questions/tagged/lanekit) is the best place to find answers.
 
 ## Benefits
-* properly implemented models and resource providers
+* properly implemented models, resource providers, and table views
 * easy integration with RestKit
 * consistent Objective-C code
 * unit tests with OCUnit (SenTestingKit)
@@ -276,9 +276,21 @@ and here is a unit test that was generated in Models/VideoTest.m by LaneKit:
     Integrating client project
     clean  /Users/larry/Projects/lanekit/SportsFrames/SportsFrames.xcworkspace
 
+### Add a new UITableViewController called ContentsViewController
+This will display the Contents model that is a list of videos.
+
+    $ lanekit generate tableviewcontroller Contents -r LKFeedCell
+
+    create  SportsFrames/SportsFrames/Controllers/ContentsViewController.h
+    create  SportsFrames/SportsFrames/Controllers/ContentsViewController.m
+    create  SportsFrames/SportsFrames/Views/LKFeedCell.h
+    create  SportsFrames/SportsFrames/Views/LKFeedCell.m
+
 ### Add the [Urban Airship](https://github.com/urbanairship/ios-library) CocoaPods Pod to the project.
 
     $ lanekit generate pod UrbanAirship-iOS-SDK
+
+    Installing UrbanAirship-iOS-SDK (3.0.1)
 
 ### Sample App
 The SportsFrames app is a fully functional sample app using RestKit created to demonstrate the use of LaneKit in a real world app. It
