@@ -1,3 +1,6 @@
+LaneKit 0.4.1, Nov 11, 2013:
+-fixed Gemspec to require xcodeproj gem version 0.11.1 or higher, which in turn requires cocoapods 0.25.0 and higher.
+
 LaneKit 0.4.0, Nov 11, 2013:
 -added method descriptionForDisplay used to infer the default display property of a model. It defaults to the first string attribute.
 -added command 'generate tableviewcontroller' to create a UITableView class that can display the items in a model, and includes pull to refresh, and an option (-r) to use the LKFeedCell in the tableview.

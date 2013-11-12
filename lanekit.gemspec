@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["larryaasen@gmail.com"]
   spec.summary       = %q{an iOS Objective-C code generator for integration with RestKit.}
   spec.description   = %q{LaneKit is an iOS Objective-C code generator for integration with RestKit. It generates
-models, resource providers, and full iOS apps with mimimal effort. There is support for unit testing with SenTestingKit
+models, resource providers, table views, and full iOS apps with mimimal effort. There is support for unit testing with SenTestingKit
 including fixtures and tests. LaneKit is a command line app written in Ruby and packaged as a Ruby Gem.}
   spec.homepage      = "https://github.com/LarryAasen/LaneKit"
   spec.license       = "MIT"
@@ -20,9 +20,9 @@ including fixtures and tests. LaneKit is a command line app written in Ruby and 
   spec.executables   = %w{ lanekit }
   spec.require_paths = %w{ lib }
 
-  spec.add_runtime_dependency 'cocoapods', '~> 0.24.0'
+  spec.add_runtime_dependency 'cocoapods', '~> 0.25.0'
   spec.add_runtime_dependency 'thor', '~> 0.18.1'
-  spec.add_runtime_dependency 'xcodeproj', '~> 0.10.0'
+  spec.add_runtime_dependency 'xcodeproj', '~> 0.11.1'
 
   spec.required_ruby_version = '>= 1.8.7'
 end
