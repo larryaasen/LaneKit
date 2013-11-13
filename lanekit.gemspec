@@ -20,7 +20,7 @@ including fixtures and tests. LaneKit is a command line app written in Ruby and 
   spec.executables   = %w{ lanekit }
   spec.require_paths = %w{ lib }
 
-  spec.add_runtime_dependency 'cocoapods', '~> 0.25.0'
+  spec.add_runtime_dependency 'cocoapods', '0.26.0'
   spec.add_runtime_dependency 'thor', '~> 0.18.1'
   spec.add_runtime_dependency 'xcodeproj', '~> 0.12.0'
 
