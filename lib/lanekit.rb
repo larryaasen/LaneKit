@@ -17,7 +17,7 @@ module LaneKit
   end
   
   # Adds a file to a group in an Xcode project
-  # For example: LaneKit.add_file_to_project('Message.m', 'Models', 'SportsFrames', 'SportsFrames')
+  # For example: LaneKit.add_file_to_project('Models/Video.m', 'SportsFrames/Models', 'SportsFrames', 'SportsFrames')
   def self.add_file_to_project(file_name, group_name, project_path, target_name=nil)
     # Open the existing Xcode project
     project = Xcodeproj::Project.open(project_path)
