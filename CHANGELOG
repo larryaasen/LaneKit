@@ -1,4 +1,4 @@
-LaneKit 0.4.4, Jan 11, 2014:
+LaneKit 0.4.5, Jan 11, 2014:
 -added license info to file headers.
 -added category NSObject (LKConventions) to return the name of one of these properties searched in this order: name, title, headline, displayName, id.
 
