@@ -1,6 +1,8 @@
 //
 //  <%=@controller_file_name%>.m
 //
+//  LaneKit is available under the MIT license. See the LICENSE file for more info.
+//
 //  This model was created on <%=config[:generate_date]%> by LaneKit v<%=config[:lanekit_version]%>.
 //
 // The following LaneKit command was used to generate this file:
@@ -9,6 +11,7 @@
 
 #import "<%=@controller_file_name%>.h"
 #import "<%=@provider_file_name%>.h"
+#import "NSObject+LKConventions.h"
 <%if @register_class != "UITableViewCell" %>#import "<%=@register_class%>.h"
 <%end%>
 @interface <%=@controller_class_name%> ()
@@ -90,7 +93,7 @@
     
     // Configure the cell...
     LKModel *model = [self.<%=@model_name%> objectAtIndex:indexPath.row];
-    cell.textLabel.text = [model descriptionForDisplay];
+    cell.textLabel.text = [model descriptionOfTopProperty];
     
     if ([model respondsToSelector:@selector(image)] && [cell respondsToSelector:@selector(imageView)])
     {
@@ -102,6 +105,12 @@
     }
 
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    LKModel *model = [self.<%=@model_name%> objectAtIndex:indexPath.row];
+    NSLog(@"[%@ %@] model selected: %@", [self description], NSStringFromSelector(_cmd), model);
 }
 
 /*

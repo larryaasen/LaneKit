@@ -1,3 +1,7 @@
+LaneKit 0.4.4, Jan 11, 2014:
+-added license info to file headers.
+-added category NSObject (LKConventions) to return the name of one of these properties searched in this order: name, title, headline, displayName, id.
+
 LaneKit 0.4.3, Nov 12, 2013:
 -changed Gemspec to require cocoapods gem version 0.26.0 to accomondate xcodeproj gem version 0.12.0.
 

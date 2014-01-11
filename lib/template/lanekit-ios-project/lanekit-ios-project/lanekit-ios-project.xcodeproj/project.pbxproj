@@ -22,6 +22,7 @@
 		46C411921824966400B19AB2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461263C6180B401300771CF8 /* UIKit.framework */; };
 		46C411A21824977D00B19AB2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 461263E4180B401300771CF8 /* InfoPlist.strings */; };
 		46C411A51824995C00B19AB2 /* lanekit-ios-projectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C411A41824995C00B19AB2 /* lanekit-ios-projectTests.m */; };
+		46F02272183F752700287EE2 /* NSObject+LKConventions.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F02271183F752700287EE2 /* NSObject+LKConventions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		46C4118F1824966400B19AB2 /* lanekit-ios-projectTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "lanekit-ios-projectTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46C411A41824995C00B19AB2 /* lanekit-ios-projectTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "lanekit-ios-projectTests.m"; sourceTree = "<group>"; };
 		46C411A618249A9600B19AB2 /* lanekit-ios-projectTests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "lanekit-ios-projectTests-Prefix.pch"; sourceTree = "<group>"; };
+		46F02270183F752700287EE2 /* NSObject+LKConventions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+LKConventions.h"; path = "Helpers/NSObject+LKConventions.h"; sourceTree = "<group>"; };
+		46F02271183F752700287EE2 /* NSObject+LKConventions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+LKConventions.m"; path = "Helpers/NSObject+LKConventions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				466CCB7A18192CDC0028AD47 /* Controllers */,
+				46F0226F183F750A00287EE2 /* Helpers */,
 				466CCB7918192CD50028AD47 /* Models */,
 				466CCB7C18192CF30028AD47 /* Resources */,
 				461263C9180B401300771CF8 /* Supporting Files */,
@@ -209,6 +213,15 @@
 				46B9152F182595FA00DC8651 /* placeholder@2x.png */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		46F0226F183F750A00287EE2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				46F02270183F752700287EE2 /* NSObject+LKConventions.h */,
+				46F02271183F752700287EE2 /* NSObject+LKConventions.m */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				461263CF180B401300771CF8 /* main.m in Sources */,
+				46F02272183F752700287EE2 /* NSObject+LKConventions.m in Sources */,
 				461263D3180B401300771CF8 /* LKAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

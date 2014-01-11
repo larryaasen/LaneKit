@@ -17,7 +17,9 @@
 // All properties in this NSManagedObject need to be defined with @dynamic<% @attributes.each do |attribute| %>
 @dynamic <%=attribute[:name]%>;<% end %><% end %>
 
-// Dictionary to convert self to JSON
+#pragma mark LKModel overrides
+
+// Dictionary to convert self to JSON/XML. For XML mappings, add .text to the end of the destination attribute name like this: "title.text".
 + (NSDictionary *)dictionaryForRequestMappings
 {
     return @{
@@ -26,7 +28,7 @@
 <% end %><% end %>    };
 }
 
-// Dictionary to convert JSON to self
+// Dictionary to convert JSON/XML to self. For XML mappings, add .text to the end of the key path like this: "title.text".
 + (NSDictionary *)dictionaryForResponseMappings
 {
   return @{
@@ -48,8 +50,6 @@
     [mapping addRelationshipMappingWithSourceKeyPath:@"<%=attribute[:name]%>" mapping:[<%=attribute[:relationship]%> responseMapping]];
 <% end %><% end %>    return mapping;
 }<% end %>
-
-#pragma mark LKModel overrides
 
 - (NSString *)descriptionForDisplay
 {<% if @first_string_attribute %>
