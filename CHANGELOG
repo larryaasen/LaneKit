@@ -1,3 +1,6 @@
+LaneKit 0.5.0, Mar 18, 2014:
+-fixed problem with Xcode 5.1 and xcodeproj gem version 0.12.0 by requiring xcodeproj gem version 0.14.1 or higher.
+
 LaneKit 0.4.5, Jan 11, 2014:
 -added license info to file headers.
 -added category NSObject (LKConventions) to return the name of one of these properties searched in this order: name, title, headline, displayName, id.

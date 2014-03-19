@@ -1,3 +1,6 @@
 *.gem
 lib/template/lanekit-ios-project/lanekit-ios-project/lanekit-ios-project.xcodeproj/xcuserdata
 lib/template/lanekit-ios-project/lanekit-ios-project.xcworkspace/xcshareddata
+.DS_Store
+lib/template/lanekit-ios-project/lanekit-ios-project.xcworkspace/xcuserdata
+lib/template/lanekit-ios-project/lanekit-ios-project/lanekit-ios-project.xcodeproj/project.xcworkspace/xcuserdata
