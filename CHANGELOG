@@ -1,3 +1,6 @@
+LaneKit 0.5.1, Mar 18, 2014:
+-changed Gemspec to require cocoapods gem version 0.26 or higher to accomondate xcodeproj gem.
+
 LaneKit 0.5.0, Mar 18, 2014:
 -fixed problem with Xcode 5.1 and xcodeproj gem version 0.12.0 by requiring xcodeproj gem version 0.14.1 or higher.
 
