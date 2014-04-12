@@ -2,9 +2,9 @@
 //  lanekit_ios_projectTests.m
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface lanekit_ios_projectTests : SenTestCase
+@interface lanekit_ios_projectTests : XCTestCase
 
 @end
 
@@ -13,20 +13,18 @@
 - (void)setUp
 {
     [super setUp];
-
-    // Set-up code here.
+    // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
 - (void)tearDown
 {
-    // Tear-down code here.
-
+    // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
 }
 
 - (void)testExample
 {
-    STAssertTrue(false, @"No test defined.");
+    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
 }
 
 @end

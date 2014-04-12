@@ -17,12 +17,12 @@
 		466CCC26181CA7CA0028AD47 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 466CCC22181CA7CA0028AD47 /* Main_iPad.storyboard */; };
 		466CCC27181CA7CA0028AD47 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 466CCC24181CA7CA0028AD47 /* Main_iPhone.storyboard */; };
 		46B91530182595FA00DC8651 /* placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46B9152F182595FA00DC8651 /* placeholder@2x.png */; };
-		46C411901824966400B19AB2 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4688500518248B3600EDAAA8 /* SenTestingKit.framework */; };
 		46C411911824966400B19AB2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461263C2180B401300771CF8 /* Foundation.framework */; };
 		46C411921824966400B19AB2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461263C6180B401300771CF8 /* UIKit.framework */; };
 		46C411A21824977D00B19AB2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 461263E4180B401300771CF8 /* InfoPlist.strings */; };
 		46C411A51824995C00B19AB2 /* lanekit-ios-projectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C411A41824995C00B19AB2 /* lanekit-ios-projectTests.m */; };
 		46F02272183F752700287EE2 /* NSObject+LKConventions.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F02271183F752700287EE2 /* NSObject+LKConventions.m */; };
+		46FE931D18F8D27A00EC41C6 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FE931B18F8D15B00EC41C6 /* XCTest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,13 +51,13 @@
 		461263E5180B401300771CF8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		466CCC23181CA7CA0028AD47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Resources/Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		466CCC25181CA7CA0028AD47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Resources/Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		4688500518248B3600EDAAA8 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		46B9152F182595FA00DC8651 /* placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "placeholder@2x.png"; path = "Resources/placeholder@2x.png"; sourceTree = "<group>"; };
 		46C4118F1824966400B19AB2 /* lanekit-ios-projectTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "lanekit-ios-projectTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46C411A41824995C00B19AB2 /* lanekit-ios-projectTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "lanekit-ios-projectTests.m"; sourceTree = "<group>"; };
 		46C411A618249A9600B19AB2 /* lanekit-ios-projectTests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "lanekit-ios-projectTests-Prefix.pch"; sourceTree = "<group>"; };
 		46F02270183F752700287EE2 /* NSObject+LKConventions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+LKConventions.h"; path = "Helpers/NSObject+LKConventions.h"; sourceTree = "<group>"; };
 		46F02271183F752700287EE2 /* NSObject+LKConventions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+LKConventions.m"; path = "Helpers/NSObject+LKConventions.m"; sourceTree = "<group>"; };
+		46FE931B18F8D15B00EC41C6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +75,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46C411901824966400B19AB2 /* SenTestingKit.framework in Frameworks */,
 				46C411921824966400B19AB2 /* UIKit.framework in Frameworks */,
+				46FE931D18F8D27A00EC41C6 /* XCTest.framework in Frameworks */,
 				46C411911824966400B19AB2 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,7 +109,7 @@
 				461263C2180B401300771CF8 /* Foundation.framework */,
 				461263C4180B401300771CF8 /* CoreGraphics.framework */,
 				461263C6180B401300771CF8 /* UIKit.framework */,
-				4688500518248B3600EDAAA8 /* SenTestingKit.framework */,
+				46FE931B18F8D15B00EC41C6 /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -269,7 +269,8 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = LK;
-				LastUpgradeCheck = 0500;
+				LastTestingUpgradeCheck = 0510;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = LaneKit;
 				TargetAttributes = {
 					46C4118E1824966400B19AB2 = {
@@ -389,7 +390,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -429,7 +429,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -496,7 +495,6 @@
 		46C4119E1824966400B19AB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/lanekit-ios-project.app/lanekit-ios-project";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -520,7 +518,6 @@
 		46C4119F1824966400B19AB2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/lanekit-ios-project.app/lanekit-ios-project";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
