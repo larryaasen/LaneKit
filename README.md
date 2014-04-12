@@ -212,36 +212,36 @@ and here is part of a unit test that was generated in Models/VideoTest.m by Lane
 - (void)testVideoNewOne
 {
   Video *video = VideoFixtures.one;
-  STAssertNotNil(video, @"video is nil");
+  XCTAssertNotNil(video, @"video is nil");
 
-  STAssertTrue([video.headline isEqualToString:@"MyString"], @"headline not correct value");
-  STAssertTrue([video.duration isEqualToString:@"MyString"], @"duration not correct value");
-  STAssertTrue(video.id.integerValue == [NSNumber numberWithInteger:1].integerValue, @"id not [NSNumber numberWithInteger:1]");
-  STAssertTrue([video.image isEqualToString:@"MyString"], @"image not correct value");
-  STAssertNotNil(video.itemDate, @"itemDate is nil");
-  STAssertTrue([video.location isEqualToString:@"MyString"], @"location not correct value");
+  XCTAssertTrue([video.headline isEqualToString:@"MyString"], @"headline not correct value");
+  XCTAssertTrue([video.duration isEqualToString:@"MyString"], @"duration not correct value");
+  XCTAssertTrue(video.id.integerValue == [NSNumber numberWithInteger:1].integerValue, @"id not [NSNumber numberWithInteger:1]");
+  XCTAssertTrue([video.image isEqualToString:@"MyString"], @"image not correct value");
+  XCTAssertNotNil(video.itemDate, @"itemDate is nil");
+  XCTAssertTrue([video.location isEqualToString:@"MyString"], @"location not correct value");
 }
 
 - (void)testVideoNewTwo
 {
   Video *video = VideoFixtures.two;
-  STAssertNotNil(video, @"video is nil");
+  XCTAssertNotNil(video, @"video is nil");
 
-  STAssertTrue([video.headline isEqualToString:@"MyString"], @"headline not correct value");
-  STAssertTrue([video.duration isEqualToString:@"MyString"], @"duration not correct value");
-  STAssertTrue(video.id.integerValue == [NSNumber numberWithInteger:1].integerValue, @"id not [NSNumber numberWithInteger:1]");
-  STAssertTrue([video.image isEqualToString:@"MyString"], @"image not correct value");
-  STAssertNotNil(video.itemDate, @"itemDate is nil");
-  STAssertTrue([video.location isEqualToString:@"MyString"], @"location not correct value");
+  XCTAssertTrue([video.headline isEqualToString:@"MyString"], @"headline not correct value");
+  XCTAssertTrue([video.duration isEqualToString:@"MyString"], @"duration not correct value");
+  XCTAssertTrue(video.id.integerValue == [NSNumber numberWithInteger:1].integerValue, @"id not [NSNumber numberWithInteger:1]");
+  XCTAssertTrue([video.image isEqualToString:@"MyString"], @"image not correct value");
+  XCTAssertNotNil(video.itemDate, @"itemDate is nil");
+  XCTAssertTrue([video.location isEqualToString:@"MyString"], @"location not correct value");
 }
 
 - (void)testMapping
 {
   RKObjectMapping *requestMapping = [Video requestMapping];
-  STAssertNotNil(requestMapping, @"[Video requestMapping] returned nil.");
+  XCTAssertNotNil(requestMapping, @"[Video requestMapping] returned nil.");
   
   RKObjectMapping *responseMapping = [Video responseMapping];
-  STAssertNotNil(responseMapping, @"[Video responseMapping] returned nil.");
+  XCTAssertNotNil(responseMapping, @"[Video responseMapping] returned nil.");
 }
 ```
 

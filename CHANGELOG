@@ -1,3 +1,8 @@
+LaneKit 0.6.0, Apr 12, 2014:
+-converted all use of SenTest to XCTest and STAssert to XCTAssert.
+-converted Xcode project from SenTestingKit to XCTest because OCUnit and the SenTestingKit framework are deprecated.
+-fixed the setting of the bundle id when a new project is created.
+
 LaneKit 0.5.1, Mar 18, 2014:
 -changed Gemspec to require cocoapods gem version 0.26 or higher to accomondate xcodeproj gem.
 

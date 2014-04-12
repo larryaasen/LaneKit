@@ -16,22 +16,20 @@
 
 - (void)setUp
 {
-  [super setUp];
-  
-  // Set-up code here.
+    [super setUp];
+    // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
 - (void)tearDown
 {
-  // Tear-down code here.
-  
-  [super tearDown];
+    // Put teardown code here. This method is called after the invocation of each test method in the class.
+    [super tearDown];
 }
 
 - (void)test<%=@class_name%>NewOne
 {
   <%=@class_name%> *<%=@model_name%> = <%=@class_name%>Fixtures.one;
-  STAssertNotNil(<%=@model_name%>, @"<%=@model_name%> is nil");
+  XCTAssertNotNil(<%=@model_name%>, @"<%=@model_name%> is nil");
 
 <% @attributes.each_with_index do |attribute, index| %><% if !attribute[:relationship] %>  <%=attribute[:unit_test_assert]%>;<% end %>
 <% end %>}
@@ -39,7 +37,7 @@
 - (void)test<%=@class_name%>NewTwo
 {
   <%=@class_name%> *<%=@model_name%> = <%=@class_name%>Fixtures.two;
-  STAssertNotNil(<%=@model_name%>, @"<%=@model_name%> is nil");
+  XCTAssertNotNil(<%=@model_name%>, @"<%=@model_name%> is nil");
 
 <% @attributes.each_with_index do |attribute, index| %><% if !attribute[:relationship] %>  <%=attribute[:unit_test_assert]%>;<% end %>
 <% end %>}
@@ -47,10 +45,10 @@
 - (void)testMapping
 {
   RKObjectMapping *requestMapping = [<%=@class_name%> requestMapping];
-  STAssertNotNil(requestMapping, @"[<%=@class_name%> requestMapping] returned nil.");
+  XCTAssertNotNil(requestMapping, @"[<%=@class_name%> requestMapping] returned nil.");
   
   RKObjectMapping *responseMapping = [<%=@class_name%> responseMapping];
-  STAssertNotNil(responseMapping, @"[<%=@class_name%> responseMapping] returned nil.");
+  XCTAssertNotNil(responseMapping, @"[<%=@class_name%> responseMapping] returned nil.");
 }
 
 @end

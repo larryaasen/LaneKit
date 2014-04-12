@@ -52,7 +52,7 @@
 		466CCC23181CA7CA0028AD47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Resources/Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		466CCC25181CA7CA0028AD47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Resources/Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		46B9152F182595FA00DC8651 /* placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "placeholder@2x.png"; path = "Resources/placeholder@2x.png"; sourceTree = "<group>"; };
-		46C4118F1824966400B19AB2 /* lanekit-ios-projectTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "lanekit-ios-projectTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		46C4118F1824966400B19AB2 /* lanekit-ios-projectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "lanekit-ios-projectTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46C411A41824995C00B19AB2 /* lanekit-ios-projectTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "lanekit-ios-projectTests.m"; sourceTree = "<group>"; };
 		46C411A618249A9600B19AB2 /* lanekit-ios-projectTests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "lanekit-ios-projectTests-Prefix.pch"; sourceTree = "<group>"; };
 		46F02270183F752700287EE2 /* NSObject+LKConventions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+LKConventions.h"; path = "Helpers/NSObject+LKConventions.h"; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				461263BF180B401300771CF8 /* lanekit-ios-project.app */,
-				46C4118F1824966400B19AB2 /* lanekit-ios-projectTests.octest */,
+				46C4118F1824966400B19AB2 /* lanekit-ios-projectTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -259,7 +259,7 @@
 			);
 			name = "lanekit-ios-projectTests";
 			productName = "lanekit-ios-project Tests";
-			productReference = 46C4118F1824966400B19AB2 /* lanekit-ios-projectTests.octest */;
+			productReference = 46C4118F1824966400B19AB2 /* lanekit-ios-projectTests.xctest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -511,7 +511,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
@@ -530,7 +530,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};

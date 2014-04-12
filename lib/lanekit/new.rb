@@ -76,8 +76,9 @@ module LaneKit
       def change_bundle_id(bundle_id)
         plistbuddy_path = '/usr/libexec/PlistBuddy'
         plist_file = "#{@app_name}-Info.plist"
-        info_plist_path = File.join(@project_path, File.join("#{@app_name}", plist_file))
-        system("#{plistbuddy_path} -c \"Set :CFBundleIdentifier #{bundle_id}\" #{info_plist_path}")
+        supporting_files = File.join(@project_path, File.join("#{@app_name}", "Supporting Files"))
+        info_plist_path = File.join(supporting_files, plist_file)
+        system("#{plistbuddy_path} -c \"Set :CFBundleIdentifier #{bundle_id}\" \"#{info_plist_path}\"")
       end
       
       def add_cocoapods

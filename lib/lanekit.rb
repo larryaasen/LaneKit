@@ -161,17 +161,17 @@ module LaneKit
   
   def self.objective_c_type_unit_test_assert(model_name, name, type_name)
     if type_name == "array"
-      assert = "STAssertNotNil(#{model_name}.#{name}, @\"#{name} is nil\")"
+      assert = "XCTAssertNotNil(#{model_name}.#{name}, @\"#{name} is nil\")"
     elsif type_name == "date"
-      assert = "STAssertNotNil(#{model_name}.#{name}, @\"#{name} is nil\")"
+      assert = "XCTAssertNotNil(#{model_name}.#{name}, @\"#{name} is nil\")"
     elsif type_name == "integer"
-      assert = "STAssertTrue(#{model_name}.#{name}.integerValue == #{self.objective_c_type_fixture_value(type_name)}.integerValue, @\"#{name} not #{self.objective_c_type_fixture_value(type_name)}\")"
+      assert = "XCTAssertTrue(#{model_name}.#{name}.integerValue == #{self.objective_c_type_fixture_value(type_name)}.integerValue, @\"#{name} not #{self.objective_c_type_fixture_value(type_name)}\")"
     elsif type_name == "string"
-      assert = "STAssertTrue([#{model_name}.#{name} isEqualToString:#{self.objective_c_type_fixture_value(type_name)}], @\"#{name} not correct value\")"
+      assert = "XCTAssertTrue([#{model_name}.#{name} isEqualToString:#{self.objective_c_type_fixture_value(type_name)}], @\"#{name} not correct value\")"
     elsif type_name
-      assert = "STAssertNotNil(#{model_name}.#{name}, @\"#{name} is nil\")"
+      assert = "XCTAssertNotNil(#{model_name}.#{name}, @\"#{name} is nil\")"
     else
-      assert = "STAssertNotNil(#{model_name}.#{name}, @\"#{name} is nil\")"
+      assert = "XCTAssertNotNil(#{model_name}.#{name}, @\"#{name} is nil\")"
     end
     assert
   end
