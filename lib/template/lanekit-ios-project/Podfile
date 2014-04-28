@@ -1,7 +1,14 @@
 xcodeproj 'lanekit-ios-project/lanekit-ios-project.xcodeproj'
 
 platform :ios, "6.0"
+inhibit_all_warnings!
 
 link_with ['lanekit-ios-project', 'lanekit-ios-projectTests'] 
 
-pod 'RestKit', '0.20.3'
+pod 'RestKit', '0.23.1'
+
+post_install do | installer |
+  require 'fileutils'
+  FileUtils.cp_r('../Pods/Pods-acknowledgements.plist', 'lanekit-ios-project/Resources/Settings.bundle/Acknowledgements.plist', :remove_destination => true)
+end
+
