@@ -89,18 +89,32 @@ module LaneKit
       end
       
       def add_gitignore
-        # Download the .gitignore file from GitHub
         require 'net/https'
-        ignore_file_uri = URI("http://raw.github.com/github/gitignore/master/Objective-C.gitignore")
+        # Create an empty .gitignore file
         ignore_file_path = File.join(@app_path, ".gitignore")
         say_status :create, ignore_file_path
-        
+
+        # Download the Objective-C .gitignore file from GitHub
+        ignore_file_uri = URI("http://raw.githubusercontent.com/github/gitignore/master/Objective-C.gitignore")
         response = Net::HTTP.start(ignore_file_uri.host, use_ssl: true, verify_mode: OpenSSL::SSL::VERIFY_NONE) do |http|
           http.get ignore_file_uri.request_uri
         end
 
+        # Write the Objective-C .gitignore contents to local .gitignore file
         require_text = response.body
         open(ignore_file_path, "wb") do |file|
+          file.write(require_text)
+        end
+
+        # Download the OSX .gitignore file from GitHub
+        ignore_file_uri = URI("http://raw.githubusercontent.com/github/gitignore/master/Global/OSX.gitignore")
+        response = Net::HTTP.start(ignore_file_uri.host, use_ssl: true, verify_mode: OpenSSL::SSL::VERIFY_NONE) do |http|
+          http.get ignore_file_uri.request_uri
+        end
+
+        # Append the OSK .gitignore contents to local .gitignore file
+        require_text = response.body
+        open(ignore_file_path, "ab") do |file|
           file.write(require_text)
         end
         
