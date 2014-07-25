@@ -1,3 +1,12 @@
+LaneKit 0.7.0, Jul 25, 2014:
+-added 'generate flurry' command that integrates Flurry SDK into project and adds Flurry startSession code to delegate.
+-the Xcode project now has a Settings bundle.
+-the CocoaPods Acknowledgements file is added to the Settings bundle.
+-fixed problem with the generation of the .gitignore file.
+-CocoaPods will now inhibit all warnings in Pods by default.
+-updated README with XCTest.
+-updated RestKit version to 0.23.1
+
 LaneKit 0.6.0, Apr 12, 2014:
 -converted all use of SenTest to XCTest and STAssert to XCTAssert.
 -converted Xcode project from SenTestingKit to XCTest because OCUnit and the SenTestingKit framework are deprecated.
