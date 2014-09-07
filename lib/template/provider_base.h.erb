@@ -20,6 +20,7 @@ typedef void(^<%=@provider_base_class_name%>CallbackBlock)(NSError *error, id re
 - (void)downloadWithCompletionBlock:(LKResourceProviderCallbackBlock)completionBlock;
 - (Class)modelClass;
 - (id)processResult:(RKMappingResult *)mappingResult withError:(NSError **)error;
+- (void)processError:(NSError *)error;
 - (RKResponseDescriptor *)responseDescriptor;
 
 @end

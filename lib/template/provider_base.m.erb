@@ -20,12 +20,17 @@
   NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:baseURL]];
   RKResponseDescriptor *responseDescriptor = [self responseDescriptor];
   RKObjectRequestOperation *operation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[responseDescriptor]];
+
+  [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
   
   [operation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     NSError *error = nil;
     id result = [self processResult:mappingResult withError:&error];
     completionBlock(nil, result);
   } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+    [self processError:error];
     completionBlock(error, nil);
   }];
   [operation start];
@@ -41,6 +46,11 @@
 - (id)processResult:(RKMappingResult *)mappingResult withError:(NSError **)error
 {
   return nil;
+}
+
+// Subclasses can override this method
+- (void)processError:(NSError *)error
+{
 }
 
 // Subclasses may need to override this method
