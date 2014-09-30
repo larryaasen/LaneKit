@@ -5,13 +5,11 @@
 #import "LKAppDelegate.h"
 // Used by LaneKit. Do not remove this: {imports}
 
-static LKAppDelegate *gSharedInstance = nil;
-
 @implementation LKAppDelegate
 
 + (LKAppDelegate *)sharedAppDelegate
 {
-    return gSharedInstance;
+    return (LKAppDelegate *)UIApplication.sharedApplication.delegate;
 }
 
 + (void)initialize
@@ -24,7 +22,6 @@ static LKAppDelegate *gSharedInstance = nil;
 {
     self = [super init];
     if (self) {
-        gSharedInstance = self;
     }
     return self;
 }
