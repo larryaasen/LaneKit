@@ -66,10 +66,18 @@ module LaneKit
         workspace_path = File.join(@app_path_full, "#{@app_name}.xcworkspace")
         say_status :clean, workspace_path, :yellow
         workspace = Xcodeproj::Workspace.new_from_xcworkspace(workspace_path)
-        container = "container:#{@app_name}/#{@app_name}.xcodeproj"
-        if workspace.include?(container)
-          workspace.projpaths.delete(container)
-          workspace.save_as(workspace_path)
+
+        this_app = 0
+        workspace.file_references.each do |reference|
+          ## https://github.com/CocoaPods/Xcodeproj/issues/190
+          if reference.path.include? @app_name
+            this_app += 1
+            if this_app > 1
+              workspace.file_references.delete(reference)
+              workspace.save_as(workspace_path)
+              break
+            end
+          end
         end
       end
       
