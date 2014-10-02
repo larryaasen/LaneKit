@@ -55,6 +55,32 @@ module LaneKit
     project.save
   end  
 
+  # Adds a acknowledgements.plist line to a CocoaPods Podfile
+  def self.add_acknowledgements_to_podfile(app_name)
+    podfile_path = File.expand_path('Podfile')
+    if !File.exists?(podfile_path)
+      puts "Can't find Podfile #{podfile_path}"
+      return
+    end
+
+    str = "
+post_install do | installer |
+  require 'fileutils'
+  FileUtils.cp_r('Pods/Pods-acknowledgements.plist', '#{app_name}/#{app_name}/Resources/Settings.bundle/Acknowledgements.plist', :remove_destination => true)
+end
+"
+
+    if !self.does_text_exist_in_file?(podfile_path, "acknowledgements.plist")
+      open(podfile_path, 'a') do |file|
+        file.puts str
+      end
+    
+      system "pod install"
+    else
+      puts "The acknowledgements.plist already exists in Podfile"
+    end
+  end
+
   # Adds a pod file line to a CocoaPods Podfile
   def self.add_pod_to_podfile(pod_name)
     podfile_path = File.expand_path('Podfile')
@@ -77,7 +103,7 @@ module LaneKit
   # Returns an app name from a folder path.
   # "Tracker" => "Tracker", "~/Projects/Runner" => "Runner"
   def self.derive_app_name(app_path)
-    app_name = File.basename(app_path).to_s
+    File.basename(app_path).to_s
   end
 
   # Model names are lower case

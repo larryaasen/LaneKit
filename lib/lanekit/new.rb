@@ -93,6 +93,11 @@ module LaneKit
         Dir.chdir(@project_path) do
           puts "Installing CocoaPods for RestKit"
           system "pod install"
+
+        end
+        # Add the acknowledgements to the Pod file
+        Dir.chdir(@app_path_full) do
+          LaneKit.add_acknowledgements_to_podfile(@app_name)
         end
       end
       
