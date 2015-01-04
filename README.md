@@ -26,9 +26,9 @@ including fixtures and tests. LaneKit is a command line app written in Ruby and 
 1. Install the LaneKit Ruby Gem from RubyGems.org on the command line:
 
         $ gem install lanekit
-        Successfully installed lanekit-0.4.4
+        Successfully installed lanekit-0.9.0
         $ lanekit -v
-        LaneKit 0.4.4
+        LaneKit 0.9.0
  
 2. LaneKit is ready to use.
 

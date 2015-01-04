@@ -1,3 +1,11 @@
+LaneKit 0.9.0, Jan 3, 2015:
+-upgraded RestKit version to 0.24.0 in the Podfile generated with a new app.
+-upgraded Podfile to a format for CocoaPods 0.34.4 and above.
+-note: Using CocoaPods 0.35.0 and above with Ruby 2.0 will resolve the "CocoaPods did not set the base configuration of your project..." error.
+-restructured project files generated with a new app to eliminate one folder level.
+-updated thor gem dependency to version 0.18.1 to pickup some fixed issues.
+-updated CocoaPods gem dependency to version 0.34.4
+
 LaneKit 0.8.0, Oct 1, 2014:
 -fixed bug where workspace had duplicate projects and new command stopped trying to remove duplicate.
 -added static method to LKAppDelegate to access app delegate.

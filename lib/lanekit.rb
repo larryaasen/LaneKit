@@ -66,7 +66,7 @@ module LaneKit
     str = "
 post_install do | installer |
   require 'fileutils'
-  FileUtils.cp_r('Pods/Pods-acknowledgements.plist', '#{app_name}/#{app_name}/Resources/Settings.bundle/Acknowledgements.plist', :remove_destination => true)
+  FileUtils.cp_r('Pods/Target Support Files/Pods/Pods-acknowledgements.plist', '#{app_name}/Resources/Settings.bundle/Acknowledgements.plist', :remove_destination => true)
 end
 "
 

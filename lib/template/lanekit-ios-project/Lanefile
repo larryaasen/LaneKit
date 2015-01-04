@@ -1,6 +1,7 @@
 app_project_name: lanekit-ios-project
 
-app_project_path: lanekit-ios-project/lanekit-ios-project.xcodeproj
+app_project_path: lanekit-ios-project.xcodeproj
 
 app_target_name: lanekit-ios-project
+
 app_target_tests_name: lanekit-ios-projectTests
